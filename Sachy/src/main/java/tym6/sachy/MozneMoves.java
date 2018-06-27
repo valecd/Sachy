@@ -21,11 +21,12 @@ public class MozneMoves {
     
     public char[][] generujGraf(ArrayList<Figurka> figurky){
         naplnPole();
-        for(int i=0; i<figurky.size(); i++){
+        //zakomentoval jsem to z důvodu kompilace
+        /*for(int i=0; i<figurky.size(); i++){
             int x = figurky.get(i).getSouradnice()[0];
             int y = figurky.get(i).getSouradnice()[1];
             pole[x][y] = figurky.get(i).getBarva();
-        }
+        }*/
         return pole;
     }
 

@@ -9,14 +9,13 @@ package tym6.sachy;
  *
  * @author NIKVAL
  */
-public class Sachy {
+public class Sachy2 {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        /*Okno okno = new Okno();
-        okno.setVisible(true);*/
+        // TODO code application logic here
         Dama dama = new Dama();
         dama.mozneTahy();
     }
