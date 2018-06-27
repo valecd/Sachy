@@ -10,5 +10,5 @@ package tym6.sachy;
  * @author Libor
  */
 public class PokusnaTrida {
-    
+    public String test = "Test";
 }
