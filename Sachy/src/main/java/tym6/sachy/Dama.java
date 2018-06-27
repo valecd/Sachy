@@ -14,8 +14,8 @@ import java.util.ArrayList;
  * @author User
  */
 public class Dama implements Figurka {
-    private boolean[][] polePohybu = new boolean[8][8];
-    private int[] souradnice;
+    private int[][] polePohybu = new int[8][8];
+    private int[] souradnice = new int[2];
     private char barva;
     
     public Dama(int[] souradnice, char barva){      
@@ -24,7 +24,9 @@ public class Dama implements Figurka {
     }
 
     Dama() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        souradnice[0] = 5;
+        souradnice[1] = 5;
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
@@ -34,6 +36,16 @@ public class Dama implements Figurka {
 
     @Override
     public void mozneTahy() {
+        int xy[] = {souradnice[0], souradnice[1]};
+        while(true){
+            xy = Pohyb.PosunUpLeft(xy[0], xy[1]);
+            if(xy[0]==-1&&xy[1]==-1){
+                break;
+            }else{
+                polePohybu[xy[0]][xy[1]] = 1;
+            }
+        }
+        
         for(int i=0; i<8; i++){
             for(int j=0; j<8; j++){
                 System.out.print(polePohybu[j][i]);

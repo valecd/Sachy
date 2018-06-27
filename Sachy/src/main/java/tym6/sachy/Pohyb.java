@@ -22,7 +22,7 @@ public class Pohyb {
 
         pole[3][5] = 'X';
 
-        int souradnice[] = KunPosunDownLeft(0,6);
+        int souradnice[] = PosunUp(0,0);
         System.out.println("x:" + souradnice[0] + " y:" + souradnice[1]);
         //while()
     }
@@ -30,33 +30,41 @@ public class Pohyb {
     public static int[] PosunUp(int x, int y) {
         if (y > 0) {
             y--;
+            int souradnice[] = {x, y};
+            return souradnice;
         }
-        int souradnice[] = {x, y};
-        return Overeni(souradnice, x, y);
+        int souradnice[] = {-1, -1};
+            return souradnice;
     }
 
     public static int[] PosunDown(int x, int y) {
         if (y < 8) {
             y++;
+            int souradnice[] = {x, y};
+            return souradnice;
         }
-        int souradnice[] = {x, y};
-        return Overeni(souradnice, x, y);
+        int souradnice[] = {-1, -1};
+            return souradnice;
     }
 
     public static int[] PosunLeft(int x, int y) {
         if (x > 0) {
             x--;
-        }
         int souradnice[] = {x, y};
-        return Overeni(souradnice, x, y);
+            return souradnice;
+        }
+        int souradnice[] = {-1, -1};
+            return souradnice;
     }
 
     public static int[] PosunRight(int x, int y) {
         if (x < 8) {
             x++;
-        }
         int souradnice[] = {x, y};
-        return Overeni(souradnice, x, y);
+            return souradnice;
+        }
+        int souradnice[] = {-1, -1};
+            return souradnice;
     }
 
     public static int[] PosunUpRight(int x, int y) {
@@ -129,8 +137,8 @@ public class Pohyb {
 
     public static int[] Overeni(int souradnice[], int x, int y) {
         if (souradnice[0] == x || souradnice[1] == y) {
-            souradnice[0] = x;
-            souradnice[1] = y;
+            souradnice[0] = -1;
+            souradnice[1] = -1;
         }
         return souradnice;
     }

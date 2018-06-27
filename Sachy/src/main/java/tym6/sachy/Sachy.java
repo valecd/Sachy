@@ -15,10 +15,11 @@ public class Sachy {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        /*Okno okno = new Okno();
-        okno.setVisible(true);*/
         Dama dama = new Dama();
         dama.mozneTahy();
+        Okno okno = new Okno();
+        okno.setVisible(true);
+        
     }
     
 }
