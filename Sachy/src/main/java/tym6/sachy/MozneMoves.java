@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package moznemoves;
+package tym6.sachy;
+
+import java.util.ArrayList;
 
 /**
  *
@@ -16,6 +18,16 @@ public class MozneMoves {
      */
     //Vytvoreni statickeho 2 rozmerneho pole (Sachovnice) 8x8 policek
     public static char[][] pole = new char[8][8];
+    
+    public char[][] generujGraf(ArrayList<Figurka> figurky){
+        naplnPole();
+        for(int i=0; i<figurky.size(); i++){
+            int x = figurky.get(i).getSouradnice()[0];
+            int y = figurky.get(i).getSouradnice()[1];
+            pole[x][y] = figurky.get(i).getBarva();
+        }
+        return pole;
+    }
 
     public static void main(String[] args) {
         naplnPole();
