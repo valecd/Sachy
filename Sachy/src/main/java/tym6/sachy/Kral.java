@@ -4,7 +4,7 @@ package tym6.sachy;
  * Tato třída reprezentuje jednu konkrétní figurku krále na hracím poli.
  * Třída obsahuje metody týkající se konkrétního typu figurky.
  * 
- * @author Valeczek, Maca, Beran, Pavlik
+ * @author Valecek, Maca, Beran, Pavlik
  */
 public class Kral extends Figurka {
 
@@ -15,7 +15,7 @@ public class Kral extends Figurka {
      *
      * @param barva
      */
-    Kral(Barva barva) {
+    Kral(Barva barva, Hra hra) {
         super.hra = hra;
         super.barva = barva;
         setJmeno("kral");

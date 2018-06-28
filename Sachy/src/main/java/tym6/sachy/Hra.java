@@ -18,8 +18,8 @@ public class Hra {
         figurky.add(new Dama(Barva.BILA));
         figurky.add(new Strelec(Barva.CERNA));
         figurky.add(new Strelec(Barva.BILA));
-        figurky.add(new Kral(Barva.CERNA));
-        figurky.add(new Kral(Barva.BILA));
+        figurky.add(new Kral(Barva.CERNA, this));
+        figurky.add(new Kral(Barva.BILA, this));
         for (int i = 0; i < 8; i++) {
             figurky.add(new Pesec(Barva.BILA, this));
         }
