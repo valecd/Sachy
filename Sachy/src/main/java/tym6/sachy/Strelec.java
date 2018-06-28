@@ -8,10 +8,12 @@ package tym6.sachy;
  */
 public class Strelec extends Figurka {
 
+    private int[][] polePohybu = new int[8][8];
     /**
      *
      * @param barva
      */
+    
    Strelec(Barva barva) {
         super.hra = hra;
         super.barva = barva;
@@ -20,7 +22,7 @@ public class Strelec extends Figurka {
             setSouradnice(4, 7);
 
         } else {
-            setSouradnice(4, 1);
+            setSouradnice(4, 0);
         }
     }
     
