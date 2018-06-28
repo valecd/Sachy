@@ -95,7 +95,7 @@ public class Okno extends javax.swing.JFrame {
         for (Figurka fig : hra.getFigurky()) {
             try {
                 //BufferedImage img = ImageIO.read(new File("C:\\Users\\NIKVAL\\Documents\\NetBeansProjects\\Sachy\\Sachy\\src\\main\\java\\tym6\\sachy\\damab.png"));
-                Image img = ImageIO.read(new File("./"+fig.getJmeno()+((fig.getBarva()==Barva.BILA)?"b":"c")+".png"));
+                Image img = ImageIO.read(new File("./src/main/java/tym6/sachy/images/"+fig.getJmeno()+((fig.getBarva()==Barva.BILA)?"b":"c")+".png"));
                 jPanel1.getGraphics().drawImage(img, fig.getSouradnice().getX()* velikost + posunX, fig.getSouradnice().getY() * velikost + posunY, null);
 
             } catch (IOException ex) {
