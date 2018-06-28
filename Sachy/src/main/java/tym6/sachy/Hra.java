@@ -17,9 +17,8 @@ public class Hra {
     private List<Figurka> figurky = new ArrayList<>();
 
     Hra() {
-        System.out.println("velikost: "+figurky.size());
         figurky.add(new Dama(Barva.CERNA));
-        System.out.println("velikost: "+figurky.size());
+        figurky.add(new Dama(Barva.BILA));
     }
 
     private void pridejFigurku(Figurka figurka) {
@@ -34,13 +33,27 @@ public class Hra {
         }
     }
 
-    /*public void zmenPozici(int puvodniSouradnice[], int novaSouradnice[]) {
+    public int coJeNaPozici(int x, int y) {
+        int hodnota = 0;//0=nic;1=cerna;2bila
         for (Figurka fig : figurky) {
-            if (fig.getSouradnice()[0] == puvodniSouradnice[0] && fig.getSouradnice()[1] == puvodniSouradnice[1]) {
-                fig.setSouradnice();
+            if (fig.getSouradnice().getX() == x && fig.getSouradnice().getY() == y) {
+                if(fig.getBarva()==Barva.CERNA){
+                    hodnota = 1;
+                }else{
+                    hodnota = 2;
+                }
             }
         }
-    }*/
+        return hodnota;
+    }
+    public Figurka getFigurku(Souradnice souradnice){
+    for (Figurka fig : figurky) {
+            if (fig.getSouradnice().getX() == souradnice.getX() && fig.getSouradnice().getY() == souradnice.getY()) {
+                return fig;
+            }
+        }
+        return null;
+    }
     public List<Figurka> getFigurky() {
        
         return figurky;

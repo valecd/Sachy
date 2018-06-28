@@ -28,13 +28,14 @@ import javax.swing.JPanel;
  * @author Valeczek, Maca, Beran, Pavlik
  */
 public class Okno extends javax.swing.JFrame {
-
+    
     Boolean prvniSpusteni = true;
     int velikost = 100;
     int posunX = 25;
     int posunY = 25;
     Hra hra;
-
+    Boolean vybrano = false;
+    Figurka figur;
     /**
      * Creates new form Okno
      */
@@ -95,8 +96,8 @@ public class Okno extends javax.swing.JFrame {
         for (Figurka fig : hra.getFigurky()) {
             try {
                 //BufferedImage img = ImageIO.read(new File("C:\\Users\\NIKVAL\\Documents\\NetBeansProjects\\Sachy\\Sachy\\src\\main\\java\\tym6\\sachy\\damab.png"));
-                Image img = ImageIO.read(new File("./src/main/java/tym6/sachy/images/"+fig.getJmeno()+((fig.getBarva()==Barva.BILA)?"b":"c")+".png"));
-                jPanel1.getGraphics().drawImage(img, fig.getSouradnice().getX()* velikost + posunX, fig.getSouradnice().getY() * velikost + posunY, null);
+                Image img = ImageIO.read(new File("./src/main/java/tym6/sachy/images/" + fig.getJmeno() + ((fig.getBarva() == Barva.BILA) ? "b" : "c") + ".png"));
+                jPanel1.getGraphics().drawImage(img, fig.getSouradnice().getX() * velikost + posunX, fig.getSouradnice().getY() * velikost + posunY, null);
 
             } catch (IOException ex) {
                 Logger.getLogger(Okno.class.getName()).log(Level.SEVERE, null, ex);
@@ -113,13 +114,47 @@ public class Okno extends javax.swing.JFrame {
                     //System.out.println("souradnice: "+pole[0]+" i"+i+" "+" y"+y+" "+pole[1]);
                     pole[0] = j * velikost + posunX;
                     pole[1] = i * velikost + posunY;
-                    BufferedImage bfi = new BufferedImage(850, 850, BufferedImage.TYPE_INT_ARGB);
+                    BufferedImage bfi = new BufferedImage(velikost, velikost, BufferedImage.TYPE_INT_ARGB);
                     Graphics2D gr = bfi.createGraphics();
                     gr.setColor(Color.YELLOW);
                     float opacity = 0.5f;
                     gr.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, opacity));
-                    gr.fill(new Rectangle(pole[0], pole[1], velikost, velikost));
-                    jPanel1.getGraphics().drawImage(bfi, 0, 0, null);
+                    gr.fill(new Rectangle(0, 0, velikost, velikost));
+                    //jPanel1.getGraphics().drawImage(bfi, pole[0], pole[1], null);
+                    
+                    
+                    
+                    boolean klinutiNaFigurku = false;
+                    
+                    if(vybrano==true&&(figur.getSouradnice().getX()* velikost + posunX!=pole[0]||figur.getSouradnice().getY()* velikost + posunY!=pole[1])){
+                        if(figur.mozneTahy()[j][i]==1){
+                            figur.setSouradnice(j, i);
+                        }
+                    }else{
+                    for (Figurka fig : hra.getFigurky()) {
+                        if(fig.getSouradnice().getX()* velikost + posunX==pole[0]&&fig.getSouradnice().getY()* velikost + posunY==pole[1]){
+                            klinutiNaFigurku=true;
+                            vybrano = true;
+                            figur = fig;
+                            jPanel1.getGraphics().drawImage(bfi, pole[0], pole[1], null);
+                            for(int k=0; k<fig.mozneTahy().length; k++){
+                                for(int p=0; p<fig.mozneTahy().length; p++){
+                                    if(fig.mozneTahy()[p][k]==1){
+                                        jPanel1.getGraphics().drawImage(bfi, p* velikost + posunX, k* velikost + posunY, null);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    }
+                    if(klinutiNaFigurku==false){
+                        vybrano = false;
+                        //jPanel1.repaint();
+                        jPanel1.getGraphics().drawImage(hraciDeska(), 0, 0, null);
+                        vykresliFigurky();
+                        
+                    }
+                    
                 }
             }
         }

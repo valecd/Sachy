@@ -10,7 +10,6 @@ package tym6.sachy;
  * @author Valeczek, Maca, Beran, Pavlik
  */
 public class Pohyb {
-
     //Pohyb nahoru
     public static Souradnice PosunUp(int x, int y) {
         if (y > 0) {
@@ -23,7 +22,7 @@ public class Pohyb {
     }
 
     public static Souradnice PosunDown(int x, int y) {
-        if (y < 7) {
+        if (y < 8) {
             y++;
             Souradnice souradnice = new Souradnice(x, y);
             return souradnice;
@@ -43,7 +42,7 @@ public class Pohyb {
     }
 
     public static Souradnice PosunRight(int x, int y) {
-        if (x < 7) {
+        if (x < 8) {
             x++;
             Souradnice souradnice = new Souradnice(x, y);
             return souradnice;
@@ -121,7 +120,7 @@ public class Pohyb {
     }
 
     public static Souradnice Overeni(Souradnice souradnice, int x, int y) {
-        if (souradnice.getX() < 8 && souradnice.getX() >= 0 && souradnice.getY() < 8 && souradnice.getY() >= 0) {
+        if (souradnice.getX() < 8 && souradnice.getX() >= 0 && souradnice.getY() < 8 && souradnice.getY()>= 0) {
             return souradnice;
         }
         souradnice.setX(-1);

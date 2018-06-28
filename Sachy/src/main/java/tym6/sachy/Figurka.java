@@ -12,6 +12,8 @@ package tym6.sachy;
 public abstract class Figurka {
 
     // protected final Hra hra;
+    protected Hra hra;
+    private int[][] polePohybu = new int[8][8];
     private Souradnice souradnice = new Souradnice(0,0);
     private String jmeno;
     protected Barva barva = Barva.BILA;
@@ -37,5 +39,8 @@ public abstract class Figurka {
     // public int[][] mozneTahy()
     public Barva getBarva() {
         return barva;
+    }
+    public int[][] mozneTahy() {
+        return polePohybu;
     }
 }
