@@ -12,36 +12,26 @@ import java.util.ArrayList;
  *
  * @author Valeczek, Maca, Beran, Pavlik
  */
-public class Dama implements Figurka {
+public class Dama extends Figurka {
 
     private int[][] polePohybu = new int[8][8];
     private int[] souradnice = new int[2];
-    private char barva;
+    private Barva barva;
 
-    public Dama(char barva) {
-        this.souradnice = souradnice;
-        this.barva = barva;
-        if (barva == 'B') {
+    public Dama(Barva barva) {
+        super(barva);
+        if (barva.equals(Barva.BILA)) {
         }
     }
 
-    Dama() {
-        souradnice[0] = 5;
-        souradnice[1] = 5;
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
     public int[] getSouradnice() {
         return souradnice;
     }
 
-    @Override
-    public int[] setSouradnice() {
-        return souradnice;
+    public void setSouradnice(int[] souradnice) {
+        this.souradnice = souradnice;
     }
 
-    @Override
     public int[][] mozneTahy() {
         int xy[] = {souradnice[0], souradnice[1]};
         while (true) {
@@ -62,7 +52,7 @@ public class Dama implements Figurka {
                 polePohybu[xy[0]][xy[1]] = 1;
             }
         }
-       /* while (true) {
+        /* while (true) {
             xy = Pohyb.PosunUpRight(xy[0], xy[1]);
             if (xy[0] == -1 && xy[1] == -1) {
                 break;
@@ -89,7 +79,7 @@ public class Dama implements Figurka {
     }
 
     @Override
-    public char getBarva() {
+    public Barva getBarva() {
         return barva;
     }
 }

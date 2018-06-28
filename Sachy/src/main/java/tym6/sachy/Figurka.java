@@ -5,18 +5,27 @@ package tym6.sachy;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Valeczek, Maca, Beran, Pavlik
  */
-public interface Figurka {
+public abstract class Figurka {
 
-    public int[] getSouradnice();
-    
-    public int[] setSouradnice();
-    
-    public int [][]mozneTahy();
-    
-    public char getBarva();
+    // protected final Hra hra;
+    private Souradnice souradnice;
+    private Barva barva = Barva.BILA;
+
+    public Figurka(Barva barva) {
+    }
+
+    //  protected int[] getSouradnice()
+    public void setSouradnice(int x, int y) {
+        souradnice.setX(x);
+        souradnice.setY(y);
+    }
+
+    // public int[][] mozneTahy()
+    public Barva getBarva() {
+        return barva;
+    }
 }
