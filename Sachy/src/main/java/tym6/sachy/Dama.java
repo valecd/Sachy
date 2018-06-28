@@ -10,8 +10,9 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Valeczek, Maca, Beran, Pavlik
+ * @author Valecek, Maca, Beran, Pavlik
  */
+// Třída pro vytváření objektu, reprezentujího figurku Dámy. 
 public class Dama implements Figurka {
 
     private int[][] polePohybu = new int[8][8];
