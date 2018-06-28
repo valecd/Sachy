@@ -23,8 +23,8 @@ public class Dama extends Figurka {
     }
 
     public int[][] mozneTahy() {
-        int xy[] = {this.getSouradnice().getX(), this.getSouradnice().getY()};
-        while (true) {
+        Souradnice xy = new Souradnice(this.getSouradnice().getX(), this.getSouradnice().getY());
+        /*while (true) {
             xy = Pohyb.PosunUpLeft(xy[0], xy[1]);
             if (xy[0] == -1 && xy[1] == -1) {
                 break;
@@ -42,14 +42,18 @@ public class Dama extends Figurka {
                 polePohybu[xy[0]][xy[1]] = 1;
             }
         }
-        /* while (true) {
-            xy = Pohyb.PosunUpRight(xy[0], xy[1]);
-            if (xy[0] == -1 && xy[1] == -1) {
+        xy[0] = this.getSouradnice().getX();
+        xy[1] = this.getSouradnice().getY();*/
+        while (xy.getX() < 7) {
+            xy = Pohyb.PosunUpRight(xy.getX(), xy.getY());
+            if (xy.getX() == -1 && xy.getY() == -1) {
                 break;
             } else {
-                polePohybu[xy[0]][xy[1]] = 1;
+                polePohybu[xy.getX()][xy.getY()] = 1;
             }
         }
+       /* xy[0] = this.getSouradnice().getX();
+        xy[1] = this.getSouradnice().getY();
         while (true) {
             xy = Pohyb.PosunDownRight(xy[0], xy[1]);
             if (xy[0] == -1 && xy[1] == -1) {
@@ -58,7 +62,6 @@ public class Dama extends Figurka {
                 polePohybu[xy[0]][xy[1]] = 1;
             }
         }*/
-
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
                 System.out.print(polePohybu[j][i]);

@@ -5,7 +5,6 @@ package tym6.sachy;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Valeczek, Maca, Beran, Pavlik
@@ -13,120 +12,122 @@ package tym6.sachy;
 public class Pohyb {
 
     //Pohyb nahoru
-    public static int[] PosunUp(int x, int y) {
+    public static Souradnice PosunUp(int x, int y) {
         if (y > 0) {
             y--;
-            int souradnice[] = {x, y};
+            Souradnice souradnice = new Souradnice(x, y);
             return souradnice;
         }
-        int souradnice[] = {-1, -1};
-            return souradnice;
+        Souradnice souradnice = new Souradnice(-1, -1);
+        return souradnice;
     }
 
-    public static int[] PosunDown(int x, int y) {
+    public static Souradnice PosunDown(int x, int y) {
         if (y < 8) {
             y++;
-            int souradnice[] = {x, y};
+            Souradnice souradnice = new Souradnice(x, y);
             return souradnice;
         }
-        int souradnice[] = {-1, -1};
-            return souradnice;
+        Souradnice souradnice = new Souradnice(-1, -1);
+        return souradnice;
     }
 
-    public static int[] PosunLeft(int x, int y) {
+    public static Souradnice PosunLeft(int x, int y) {
         if (x > 0) {
             x--;
-        int souradnice[] = {x, y};
+            Souradnice souradnice = new Souradnice(x, y);
             return souradnice;
         }
-        int souradnice[] = {-1, -1};
-            return souradnice;
+        Souradnice souradnice = new Souradnice(-1, -1);
+        return souradnice;
     }
 
-    public static int[] PosunRight(int x, int y) {
+    public static Souradnice PosunRight(int x, int y) {
         if (x < 8) {
             x++;
-        int souradnice[] = {x, y};
+            Souradnice souradnice = new Souradnice(x, y);
             return souradnice;
         }
-        int souradnice[] = {-1, -1};
-            return souradnice;
+        Souradnice souradnice = new Souradnice(-1, -1);
+        return souradnice;
     }
 
-    public static int[] PosunUpRight(int x, int y) {
-        int souradnice[] = PosunUp(x, y);
-        souradnice = PosunRight(souradnice[0], souradnice[1]);
+    public static Souradnice PosunUpRight(int x, int y) {
+        Souradnice souradnice = PosunUp(x, y);
+        souradnice = PosunRight(souradnice.getX(), souradnice.getY());
         return Overeni(souradnice, x, y);
     }
 
-    public static int[] PosunDownRight(int x, int y) {
-        int souradnice[] = PosunDown(x, y);
-        souradnice = PosunRight(souradnice[0], souradnice[1]);
+    public static Souradnice PosunDownRight(int x, int y) {
+        Souradnice souradnice = PosunDown(x, y);
+        souradnice = PosunRight(souradnice.getX(), souradnice.getY());
         return Overeni(souradnice, x, y);
     }
 
-    public static int[] PosunUpLeft(int x, int y) {
-        int souradnice[] = PosunUp(x, y);
-        souradnice = PosunLeft(souradnice[0], souradnice[1]);
+    public static Souradnice PosunUpLeft(int x, int y) {
+        Souradnice souradnice = PosunUp(x, y);
+        souradnice = PosunLeft(souradnice.getX(), souradnice.getY());
         return Overeni(souradnice, x, y);
     }
 
-    public static int[] PosunDownLeft(int x, int y) {
-        int souradnice[] = PosunDown(x, y);
-        souradnice = PosunLeft(souradnice[0], souradnice[1]);
+    public static Souradnice PosunDownLeft(int x, int y) {
+        Souradnice souradnice = PosunDown(x, y);
+        souradnice = PosunLeft(souradnice.getX(), souradnice.getY());
         return Overeni(souradnice, x, y);
     }
 
-    public static int[] KunPosunUpRight(int x, int y) {
-        int souradnice[] = {x, y};
+    public static Souradnice KunPosunUpRight(int x, int y) {
+        Souradnice souradnice = new Souradnice(x, y);
         if (x < 8 && y > 1) {
             souradnice = PosunUp(x, y);
-            souradnice = PosunUp(souradnice[0], souradnice[1]);
-            souradnice = PosunRight(souradnice[0], souradnice[1]);
+            souradnice = PosunUp(souradnice.getX(), souradnice.getY());
+            souradnice = PosunRight(souradnice.getX(), souradnice.getY());
             return souradnice;
         }
         return souradnice;
 
     }
 
-    public static int[] KunPosunDownRight(int x, int y) {
-        int souradnice[] = {x, y};
+    public static Souradnice KunPosunDownRight(int x, int y) {
+        Souradnice souradnice = new Souradnice(x, y);
         if (x < 8 && y < 7) {
             souradnice = PosunDown(x, y);
-            souradnice = PosunDown(souradnice[0], souradnice[1]);
-            souradnice = PosunRight(souradnice[0], souradnice[1]);
+            souradnice = PosunDown(souradnice.getX(), souradnice.getY());
+            souradnice = PosunRight(souradnice.getX(), souradnice.getY());
             return souradnice;
         }
         return souradnice;
     }
 
-    public static int[] KunPosunUpLeft(int x, int y) {
-        int souradnice[] = {x, y};
+    public static Souradnice KunPosunUpLeft(int x, int y) {
+        Souradnice souradnice = new Souradnice(x, y);
         if (x > 0 && y > 1) {
-        souradnice = PosunUp(x, y);
-        souradnice = PosunUp(souradnice[0], souradnice[1]);
-        souradnice = PosunLeft(souradnice[0], souradnice[1]);
-        return souradnice;
+            souradnice = PosunUp(x, y);
+            souradnice = PosunUp(souradnice.getX(), souradnice.getY());
+            souradnice = PosunLeft(souradnice.getX(), souradnice.getY());
+            return souradnice;
         }
         return souradnice;
     }
 
-    public static int[] KunPosunDownLeft(int x, int y) {
-        int souradnice[] = {x, y};
+    public static Souradnice KunPosunDownLeft(int x, int y) {
+        Souradnice souradnice = new Souradnice(x, y);
         if (x > 0 && y < 7) {
             souradnice = PosunDown(x, y);
-            souradnice = PosunDown(souradnice[0], souradnice[1]);
-            souradnice = PosunLeft(souradnice[0], souradnice[1]);
+            souradnice = PosunDown(souradnice.getX(), souradnice.getY());
+            souradnice = PosunLeft(souradnice.getX(), souradnice.getY());
         }
         return souradnice;
     }
 
-    public static int[] Overeni(int souradnice[], int x, int y) {
-        if (souradnice[0] < 8 && souradnice[0] >=0&&souradnice[1] < 8 && souradnice[1] >=0) {
+    public static Souradnice Overeni(Souradnice souradnice, int x, int y) {
+        if (souradnice.getX() < 7 && souradnice.getX() >= 0 && souradnice.getY() < 7 && souradnice.getY()>= 0) {
             return souradnice;
         }
-        souradnice[0] = -1;
-        souradnice[1] = -1;
+        souradnice.setX(-1);
+        souradnice.setY(-1);
+      //  souradnice[0] = -1;
+       // souradnice[1] = -1;
         return souradnice;
     }
 }
