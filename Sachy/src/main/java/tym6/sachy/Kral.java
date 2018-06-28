@@ -20,10 +20,10 @@ public class Kral extends Figurka {
         super.barva = barva;
         setJmeno("kral");
         if (barva.equals(Barva.BILA)) {
-            setSouradnice(6, 7);
+            setSouradnice(4, 7);
 
         } else {
-            setSouradnice(6, 0);
+            setSouradnice(3, 0);
         }
     }
     

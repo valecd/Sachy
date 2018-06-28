@@ -21,13 +21,13 @@ public class Dama extends Figurka {
             setSouradnice(3, 7);
 
         } else {
-            setSouradnice(3, 0);
+            setSouradnice(4, 0);
         }
     }
 
     /**
      * Metoda která nabídne políčka, na která je možné se posunout.
-     * 
+     *
      * @return Vrací dvourozměrné pole, kde jsou vyznačena dostupná políčka pro
      * pohyb.
      */
@@ -68,6 +68,46 @@ public class Dama extends Figurka {
         xy.setY(this.getSouradnice().getY());
         while (true) {
             xy = Pohyb.PosunDownRight(xy.getX(), xy.getY());
+            if (xy.getX() == -1 && xy.getY() == -1) {
+                break;
+            } else {
+                polePohybu[xy.getX()][xy.getY()] = 1;
+            }
+        }
+        xy.setX(this.getSouradnice().getX());
+        xy.setY(this.getSouradnice().getY());
+        while (true) {
+            xy = Pohyb.PosunUp(xy.getX(), xy.getY());
+            if (xy.getX() == -1 && xy.getY() == -1) {
+                break;
+            } else {
+                polePohybu[xy.getX()][xy.getY()] = 1;
+            }
+        }
+        xy.setX(this.getSouradnice().getX());
+        xy.setY(this.getSouradnice().getY());
+        while (true) {
+            xy = Pohyb.PosunDown(xy.getX(), xy.getY());
+            if (xy.getX() == -1 && xy.getY() == -1) {
+                break;
+            } else {
+                polePohybu[xy.getX()][xy.getY()] = 1;
+            }
+        }
+        xy.setX(this.getSouradnice().getX());
+        xy.setY(this.getSouradnice().getY());
+        while (true) {
+            xy = Pohyb.PosunRight(xy.getX(), xy.getY());
+            if (xy.getX() == -1 && xy.getY() == -1) {
+                break;
+            } else {
+                polePohybu[xy.getX()][xy.getY()] = 1;
+            }
+        }
+        xy.setX(this.getSouradnice().getX());
+        xy.setY(this.getSouradnice().getY());
+        while (true) {
+            xy = Pohyb.PosunLeft(xy.getX(), xy.getY());
             if (xy.getX() == -1 && xy.getY() == -1) {
                 break;
             } else {
