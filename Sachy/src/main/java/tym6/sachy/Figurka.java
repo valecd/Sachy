@@ -8,7 +8,7 @@ package tym6.sachy;
 
 /**
  *
- * @author User
+ * @author Valeczek, Maca, Beran, Pavlik
  */
 public interface Figurka {
 

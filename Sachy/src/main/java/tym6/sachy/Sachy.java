@@ -7,7 +7,7 @@ package tym6.sachy;
 
 /**
  *
- * @author NIKVAL
+ * @author Valeczek, Maca, Beran, Pavlik
  */
 public class Sachy {
 

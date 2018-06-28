@@ -19,7 +19,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author NIKVAL
+ * @author Valeczek, Maca, Beran, Pavlik
  */
 public class Okno extends javax.swing.JFrame {
     Boolean prvniSpusteni = true;
