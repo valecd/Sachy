@@ -1,19 +1,16 @@
 package tym6.sachy;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 import java.awt.Image;
 import java.util.ArrayList;
 
 /**
+ * Tato třída reprezentuje jednu konkrétní figurku dámy na hracím poli. Třída
+ * obsahuje metody týkající se konkrétního typu figurky.
  *
  * @author Valeczek, Maca, Beran, Pavlik
  */
 public class Dama extends Figurka {
-    
+
     private int[][] polePohybu = new int[8][8];
 
     Dama(Barva barva) {
@@ -22,23 +19,28 @@ public class Dama extends Figurka {
         setJmeno("dama");
         if (barva.equals(Barva.BILA)) {
             setSouradnice(3, 7);
-           
-        }else{
+
+        } else {
             setSouradnice(3, 1);
         }
     }
 
+    /**
+     * Metoda která nabídne políčka, na která je možné se posunout.
+     * 
+     * @return Vrací dvourozměrné pole, kde jsou vyznačena dostupná políčka pro
+     * pohyb.
+     */
     public int[][] mozneTahy() {
         polePohybu = new int[8][8];
         Souradnice xy = new Souradnice(this.getSouradnice().getX(), this.getSouradnice().getY());
         while (true) {
             //System.out.println(xy.getX()+" "+xy.getY());
-            
-            
+
             xy = Pohyb.PosunUpLeft(xy.getX(), xy.getY());
             if (xy.getX() == -1 && xy.getY() == -1) {
                 break;
-            }else {
+            } else {
                 polePohybu[xy.getX()][xy.getY()] = 1;
             }
         }

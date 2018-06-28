@@ -1,14 +1,19 @@
 package tym6.sachy;
 
 /**
- *
- * @author Libor
+ * Tato třída reprezentuje jednu konkrétní figurku střelce na hracím poli.
+ * Třída obsahuje metody týkající se konkrétního typu figurky.
+ * 
+ * @author Valeczek, Maca, Beran, Pavlik
  */
-// Třída pro vytváření objektu, reprezentujího figurku střelce.
 public class Strelec extends Figurka {
 
+    /**
+     *
+     * @param barva
+     */
     public Strelec(Barva barva) {
-        super(barva);
+      //  super(barva);
         if (barva.equals(Barva.BILA)) {
         }
     }

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package tym6.sachy;
 
 import java.awt.AlphaComposite;
@@ -11,7 +6,6 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
-import java.awt.Panel;
 import java.awt.Rectangle;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -21,14 +15,14 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
-import javax.swing.JPanel;
 
 /**
+ * Třída sloužící jako grafické rozhraní hry.
  *
  * @author Valeczek, Maca, Beran, Pavlik
  */
 public class Okno extends javax.swing.JFrame {
-    
+
     Boolean prvniSpusteni = true;
     int velikost = 100;
     int posunX = 25;
@@ -36,8 +30,9 @@ public class Okno extends javax.swing.JFrame {
     Hra hra;
     Boolean vybrano = false;
     Figurka figur;
+
     /**
-     * Creates new form Okno
+     * Konstruktor třídy Okno
      */
     public Okno() {
         initComponents();
@@ -45,6 +40,11 @@ public class Okno extends javax.swing.JFrame {
         hra = new Hra();
     }
 
+    /**
+     * Metoda pro vytvoření grafické podoby herní desky.
+     *
+     * @return Vrací obrázek reprezentující herní desku.
+     */
     public BufferedImage hraciDeska() {
         BufferedImage bfi = new BufferedImage(850, 850, BufferedImage.TYPE_INT_ARGB);
         Graphics2D gr = bfi.createGraphics();
@@ -90,6 +90,9 @@ public class Okno extends javax.swing.JFrame {
         }
     }
 
+    /**
+     * Metoda sloužící pro vykreslování jednotlivých figurek na herní desce.
+     */
     public void vykresliFigurky() {
 
         //System.out.println("./"+hra.getFigurky().get(0).getJmeno()+((hra.getFigurky().get(0).getBarva()==Barva.BILA)?"b":"c")+".png");
@@ -106,6 +109,15 @@ public class Okno extends javax.swing.JFrame {
 
     }
 
+    /**
+     * Metoda pro hledání skutečných souřadnic konkrétních políček na herní
+     * desce. Tato metoda podle poskytnutých, reprezentativních souřadnic,
+     * poskytnutých hrou, vrací skutečné souřadnice grafického políčka.
+     *
+     * @param x Souřadnice osy X poskytnuté hrou.
+     * @param y Souřadnice osy Y poskytnuté hrou.
+     * @return Skutečné souřadnice v grafickém prostředí.
+     */
     public int[] najdiSouradniceCtverce(int x, int y) {
         int pole[] = new int[2];
         for (int i = 0; i < 8; i++) {
@@ -121,40 +133,38 @@ public class Okno extends javax.swing.JFrame {
                     gr.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, opacity));
                     gr.fill(new Rectangle(0, 0, velikost, velikost));
                     //jPanel1.getGraphics().drawImage(bfi, pole[0], pole[1], null);
-                    
-                    
-                    
+
                     boolean klinutiNaFigurku = false;
-                    
-                    if(vybrano==true&&(figur.getSouradnice().getX()* velikost + posunX!=pole[0]||figur.getSouradnice().getY()* velikost + posunY!=pole[1])){
-                        if(figur.mozneTahy()[j][i]==1){
+
+                    if (vybrano == true && (figur.getSouradnice().getX() * velikost + posunX != pole[0] || figur.getSouradnice().getY() * velikost + posunY != pole[1])) {
+                        if (figur.mozneTahy()[j][i] == 1) {
                             figur.setSouradnice(j, i);
                         }
-                    }else{
-                    for (Figurka fig : hra.getFigurky()) {
-                        if(fig.getSouradnice().getX()* velikost + posunX==pole[0]&&fig.getSouradnice().getY()* velikost + posunY==pole[1]){
-                            klinutiNaFigurku=true;
-                            vybrano = true;
-                            figur = fig;
-                            jPanel1.getGraphics().drawImage(bfi, pole[0], pole[1], null);
-                            for(int k=0; k<fig.mozneTahy().length; k++){
-                                for(int p=0; p<fig.mozneTahy().length; p++){
-                                    if(fig.mozneTahy()[p][k]==1){
-                                        jPanel1.getGraphics().drawImage(bfi, p* velikost + posunX, k* velikost + posunY, null);
+                    } else {
+                        for (Figurka fig : hra.getFigurky()) {
+                            if (fig.getSouradnice().getX() * velikost + posunX == pole[0] && fig.getSouradnice().getY() * velikost + posunY == pole[1]) {
+                                klinutiNaFigurku = true;
+                                vybrano = true;
+                                figur = fig;
+                                jPanel1.getGraphics().drawImage(bfi, pole[0], pole[1], null);
+                                for (int k = 0; k < fig.mozneTahy().length; k++) {
+                                    for (int p = 0; p < fig.mozneTahy().length; p++) {
+                                        if (fig.mozneTahy()[p][k] == 1) {
+                                            jPanel1.getGraphics().drawImage(bfi, p * velikost + posunX, k * velikost + posunY, null);
+                                        }
                                     }
                                 }
                             }
                         }
                     }
-                    }
-                    if(klinutiNaFigurku==false){
+                    if (klinutiNaFigurku == false) {
                         vybrano = false;
                         //jPanel1.repaint();
                         jPanel1.getGraphics().drawImage(hraciDeska(), 0, 0, null);
                         vykresliFigurky();
-                        
+
                     }
-                    
+
                 }
             }
         }
@@ -232,49 +242,17 @@ public class Okno extends javax.swing.JFrame {
         jPanel1.getGraphics().drawImage(hraciDeska(), 0, 0, null);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Okno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Okno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Okno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Okno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Okno().setVisible(true);
-            }
-        });
-    }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
-private class MysListener extends MouseAdapter {
-
+    
+    /**
+     * Tato třída kontroluje vstupy hráče (kliknutí myší) a reaguje na ně
+     */
+    private class MysListener extends MouseAdapter {
         @Override
         public void mouseClicked(MouseEvent event) {
             int x = event.getX();

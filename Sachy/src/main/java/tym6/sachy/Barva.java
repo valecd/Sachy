@@ -6,9 +6,24 @@
 package tym6.sachy;
 
 /**
- *
- * @author Libor
+ * Vytváří hodnoty o omezeném počtu (2), které jsou použity pro 
+ * rozeznávání hráčů
+ * 
+ * @author Valeczek, Maca, Beran, Pavlik
  */
 public enum Barva {
-    CERNA, BILA;
+
+    /**
+     *
+     * Hodnota reprezentující černou barvu.
+     * 
+     */
+    CERNA,
+
+    /**
+     *
+     * Hodnota reprezentující bílou barvu.
+     * 
+     */
+    BILA;
 }

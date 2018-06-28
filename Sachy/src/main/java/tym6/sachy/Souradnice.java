@@ -1,42 +1,71 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package tym6.sachy;
 
 /**
+ * Tato třída slouží jako šablona, která se používá pro práci se souřadnicemi,
+ * určujícími pozici na šachovnici.
  *
- * @author Libor
+ * @author Valeczek, Maca, Beran, Pavlik
  */
 public class Souradnice {
 
     private int x;
     private int y;
 
+    /**
+     * Konstruktor třídy.
+     *
+     * @param x Souřadnice osy X.
+     * @param y Souřadnice osy Y.
+     */
     public Souradnice(int x, int y) {
         setX(x);
         setY(y);
     }
 
+    /**
+     * Vrací hodnotu souřadnice osy X.
+     *
+     * @return Souřadnice osy X.
+     */
     public int getX() {
         return x;
     }
 
+    /**
+     * Umožňuje nastavení hodnoty souřadnice osy X.
+     *
+     * @param x Požadovaná hodnota souřadnice osy X.
+     */
     public void setX(int x) {
         checkRange(x);
         this.x = x;
     }
 
+    /**
+     * Vrací hodnotu souřadnice osy Y.
+     *
+     * @return Souřadnice osy Y.
+     */
     public int getY() {
         return y;
     }
 
+    /**
+     * Umožňuje nastavení hodnoty souřadnice osy Y.
+     *
+     * @param y Požadovaná hodnota souřadnice osy Y.
+     */
     public void setY(int y) {
         checkRange(y);
         this.y = y;
     }
 
+    /**
+     * Metoda hlídající hodnoty zadávaných souřadnic.
+     * Stará se o to aby hodnota byla v žádaném rozsahu.
+     *
+     * @param y Zadávaná hodnota.
+     */
     private void checkRange(int value) {
         if (value < -1 || value > 8) {//zkontrolovat
             throw new IllegalArgumentException("Souradnice mimo rozsah: " + value);

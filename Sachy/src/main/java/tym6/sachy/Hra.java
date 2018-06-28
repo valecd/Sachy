@@ -1,16 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package tym6.sachy;
 
 import java.util.List;
 import java.util.ArrayList;
 
 /**
- *
- * @author NIKVAL
+ * Třída pro vytváření jednotlivých instancí různých her.
+ * V této třídě jsou metody obstarávající chod hry.
+ * 
+ * @author Valeczek, Maca, Beran, Pavlik
  */
 public class Hra {
 
@@ -21,10 +18,20 @@ public class Hra {
         figurky.add(new Dama(Barva.BILA));
     }
 
+    /**
+     * Metoda přiřazující figurky do seznamu všech figurek.
+     *
+     * @param figurka Konkrétní instance třídy jedné z figurek.
+     */
     private void pridejFigurku(Figurka figurka) {
         figurky.add(figurka);
     }
 
+    /**
+     * Metoda pro odebrání figurky ze seznamu figurek.
+     *
+     * @param souradnice Souřadnice na kterých se figurka nacházía.
+     */
     public void odeberFigurkuFigurkou(Souradnice souradnice) {
         for (Figurka fig : figurky) {
             if (fig.getSouradnice().getX() == souradnice.getX() && fig.getSouradnice().getY() == souradnice.getY()) {
@@ -33,29 +40,52 @@ public class Hra {
         }
     }
 
+    /**
+     * Metoda pro určení zda se na daném políčku nachází figurka a jaké je barvy.
+     * 
+     * @param x Součadnice osy X.
+     * @param y Souřadnice osy Y.
+     * @return vrací hodnotu 0,1,2 podle toho co se na poli nachází
+     * 0 = nic
+     * 1 = cerna
+     * 2 = bila
+     */
     public int coJeNaPozici(int x, int y) {
-        int hodnota = 0;//0=nic;1=cerna;2bila
+        int hodnota = 0;
         for (Figurka fig : figurky) {
             if (fig.getSouradnice().getX() == x && fig.getSouradnice().getY() == y) {
-                if(fig.getBarva()==Barva.CERNA){
+                if (fig.getBarva() == Barva.CERNA) {
                     hodnota = 1;
-                }else{
+                } else {
                     hodnota = 2;
                 }
             }
         }
         return hodnota;
     }
-    public Figurka getFigurku(Souradnice souradnice){
-    for (Figurka fig : figurky) {
+
+    /**
+     * Metoda pro vybrání konkrétní figurky ze seznamu figurek.
+     * 
+     * @param souradnice Souřadnice na kterých se žádaná figurka nachází.
+     * @return Vrací konkrétní figurku.
+     */
+    public Figurka getFigurku(Souradnice souradnice) {
+        for (Figurka fig : figurky) {
             if (fig.getSouradnice().getX() == souradnice.getX() && fig.getSouradnice().getY() == souradnice.getY()) {
                 return fig;
             }
         }
         return null;
     }
+
+    /**
+     * Metoda vracející seznam všech figurek.
+     * 
+     * @return Seznam všech figurek.
+     */
     public List<Figurka> getFigurky() {
-       
+
         return figurky;
 
     }
