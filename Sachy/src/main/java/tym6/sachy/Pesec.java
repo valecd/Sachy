@@ -4,6 +4,9 @@ package tym6.sachy;
  *
  * @author Libor
  */
+
+// Třída pro vytváření objektu, reprezentujího figurku pěšce.
+
 public class Pesec implements Figurka {
 
     private int[][] polePohybu = new int[8][8];
