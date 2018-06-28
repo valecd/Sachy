@@ -20,6 +20,8 @@ public class Hra {
         figurky.add(new Strelec(Barva.BILA));
         figurky.add(new Kral(Barva.CERNA));
         figurky.add(new Kral(Barva.BILA));
+        figurky.add(new Pesec(Barva.CERNA));
+        figurky.add(new Pesec(Barva.BILA));
     }
 
     /**
