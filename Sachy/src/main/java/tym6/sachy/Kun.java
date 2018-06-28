@@ -4,6 +4,9 @@ package tym6.sachy;
  *
  * @author Libor
  */
+
+//Třída pro vytváření objektu, reprezentujícího figurku koně
+
 public class Kun implements Figurka {
 
     private int[][] polePohybu = new int[8][8];
