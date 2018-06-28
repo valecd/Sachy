@@ -2,7 +2,7 @@ package tym6.sachy;
 
 /**
  *
- * @author Libor
+ * @author Valecek, Maca, Beran, Pavlik
  */
 //Třída pro vytváření objektu, reprezentujícího figurku koně
 public class Kun implements Figurka {

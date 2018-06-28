@@ -19,7 +19,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author Valeczek, Maca, Beran, Pavlik
+ * @author Valecek, Maca, Beran, Pavlik
  */
 public class Okno extends javax.swing.JFrame {
     Boolean prvniSpusteni = true;
@@ -130,6 +130,8 @@ public class Okno extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+
+        jPanel1.setMaximumSize(new java.awt.Dimension(3276, 3276));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
