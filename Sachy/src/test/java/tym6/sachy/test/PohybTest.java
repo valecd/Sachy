@@ -104,6 +104,30 @@ public class PohybTest {
          System.out.println("Test proběhl");
          
      }
+    
+     @Test
+     public void KunPosunUpRightTest(){
+         assertEquals(5,PosunRight1(4));
+         assertEquals(5,PosunUp1(3)+3);
+     }
+     
+     @Test
+     public void KunPosunDownRightTest(){
+         assertEquals(5,PosunRight1(4));
+         assertEquals(1,PosunDown1(3)-3);
+     }
+     
+     @Test
+     public void KunPosunUpLeftTest(){
+         assertEquals(3,PosunLeft1(4));
+         assertEquals(5,PosunUp1(3)+3);
+     }
+     
+     @Test
+     public void KunPosunDownLeftTest(){
+         assertEquals(3,PosunLeft1(4));
+         assertEquals(1,PosunDown1(3)-3);
+     }
      
  
 }
