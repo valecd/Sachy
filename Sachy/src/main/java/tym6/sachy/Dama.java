@@ -32,7 +32,12 @@ public class Dama implements Figurka {
     @Override
     public int[] getSouradnice() {
         return souradnice;
-    }        
+    }   
+    
+    @Override
+    public int[] setSouradnice() {
+        return souradnice;
+    }
 
     @Override
     public int [][]mozneTahy() {
