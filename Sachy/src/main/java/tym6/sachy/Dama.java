@@ -35,7 +35,7 @@ public class Dama implements Figurka {
     }        
 
     @Override
-    public void mozneTahy() {
+    public int [][]mozneTahy() {
         int xy[] = {souradnice[0], souradnice[1]};
         while(true){
             xy = Pohyb.PosunUpLeft(xy[0], xy[1]);
@@ -52,7 +52,7 @@ public class Dama implements Figurka {
             }
             System.out.println("");
         }
-        
+        return polePohybu;
     }
 
     @Override

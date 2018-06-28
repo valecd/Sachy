@@ -14,7 +14,7 @@ public interface Figurka {
 
     public int[] getSouradnice();
     
-    public void mozneTahy();
+    public int [][]mozneTahy();
     
     public char getBarva();
 }
