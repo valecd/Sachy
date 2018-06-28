@@ -2,7 +2,7 @@ package tym6.sachy;
 
 /**
  *
- * @author Libor
+ * @author Valecek, Maca, Beran, Pavlik
  */
 // Třída pro vytváření objektu, reprezentujího figurku věže.
 public class Vez implements Figurka {
