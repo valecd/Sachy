@@ -21,7 +21,7 @@ public class Dama extends Figurka {
             setSouradnice(3, 7);
 
         } else {
-            setSouradnice(3, 1);
+            setSouradnice(3, 0);
         }
     }
 

@@ -9,7 +9,6 @@ package tym6.sachy;
 public class Kral extends Figurka {
 
     private int[][] polePohybu = new int[8][8];
-    private int[] souradnice = new int[2];
     private char barva;
 
     /**
@@ -24,7 +23,7 @@ public class Kral extends Figurka {
             setSouradnice(6, 7);
 
         } else {
-            setSouradnice(6, 1);
+            setSouradnice(6, 0);
         }
     }
     
