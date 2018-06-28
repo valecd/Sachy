@@ -8,10 +8,6 @@ package tym6.sachy;
  */
 public class Strelec extends Figurka {
 
-    /**
-     *
-     * @param barva
-     */
     private int[][] polePohybu = new int[8][8];
 
     Strelec(Barva barva, Hra hra) {

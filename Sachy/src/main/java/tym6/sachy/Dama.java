@@ -53,6 +53,7 @@ public class Dama extends Figurka {
      * @return Vrací dvourozměrné pole, kde jsou vyznačena dostupná políčka pro
      * pohyb.
      */
+    
     public int[][] mozneTahy() {
         polePohybu = new int[8][8];
         Souradnice xy = new Souradnice(this.getSouradnice().getX(), this.getSouradnice().getY());
