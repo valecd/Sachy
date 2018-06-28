@@ -51,18 +51,18 @@ public class Okno extends javax.swing.JFrame {
             gr.drawString(8-i+"", 5, velikost/2+posunY+i*velikost+5);
                 if(i%2==0){
                     if(j%2==0){
-                        gr.setColor(Color.DARK_GRAY);
+                        gr.setColor(Color.LIGHT_GRAY);
                         gr.fill(new Rectangle(posunX+j*velikost, posunY+i*velikost, velikost, velikost));
                     }else{
-                        gr.setColor(Color.LIGHT_GRAY);
+                        gr.setColor(Color.DARK_GRAY);
                         gr.fill(new Rectangle(posunX+j*velikost, posunY+i*velikost, velikost, velikost));
                     }
                 }else{
                     if(j%2==0){
-                        gr.setColor(Color.LIGHT_GRAY);
+                        gr.setColor(Color.DARK_GRAY);
                         gr.fill(new Rectangle(posunX+j*velikost, posunY+i*velikost, velikost, velikost));
                     }else{
-                        gr.setColor(Color.DARK_GRAY);
+                        gr.setColor(Color.LIGHT_GRAY);
                         gr.fill(new Rectangle(posunX+j*velikost, posunY+i*velikost, velikost, velikost));
                     }
                 }
