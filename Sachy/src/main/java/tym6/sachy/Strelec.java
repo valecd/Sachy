@@ -12,6 +12,9 @@ public class Strelec extends Figurka {
      *
      * @param barva
      */
+    
+   private int[][] polePohybu = new int[8][8];
+    
    Strelec(Barva barva) {
         super.hra = hra;
         super.barva = barva;
