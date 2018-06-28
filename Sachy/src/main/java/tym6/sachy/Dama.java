@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * Tato třída reprezentuje jednu konkrétní figurku dámy na hracím poli. Třída
  * obsahuje metody týkající se konkrétního typu figurky.
  *
- * @author Valeczek, Maca, Beran, Pavlik
+ * @author Valecek, Maca, Beran, Pavlik
  */
 public class Dama extends Figurka {
 
