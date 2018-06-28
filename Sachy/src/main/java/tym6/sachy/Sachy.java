@@ -15,7 +15,8 @@ public class Sachy {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Dama dama = new Dama();
+        Dama dama = new Dama(Barva.BILA);
+        dama.setSouradnice(5, 5);
         dama.mozneTahy();
         Okno okno = new Okno();
         okno.setVisible(true);

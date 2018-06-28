@@ -12,8 +12,10 @@ package tym6.sachy;
 public abstract class Figurka {
 
     // protected final Hra hra;
-    private Souradnice souradnice;
+    private Souradnice souradnice = new Souradnice(0,0);
     private Barva barva = Barva.BILA;
+    private int x;
+    private int y;
 
     public Figurka(Barva barva) {
     }
@@ -22,6 +24,10 @@ public abstract class Figurka {
     public void setSouradnice(int x, int y) {
         souradnice.setX(x);
         souradnice.setY(y);
+    }
+
+    public Souradnice getSouradnice() {
+        return souradnice;
     }
 
     // public int[][] mozneTahy()
