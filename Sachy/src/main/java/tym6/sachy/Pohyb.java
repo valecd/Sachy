@@ -121,13 +121,11 @@ public class Pohyb {
     }
 
     public static Souradnice Overeni(Souradnice souradnice, int x, int y) {
-        if (souradnice.getX() < 7 && souradnice.getX() >= 0 && souradnice.getY() < 7 && souradnice.getY()>= 0) {
+        if (souradnice.getX() < 8 && souradnice.getX() >= 0 && souradnice.getY() < 8 && souradnice.getY()>= 0) {
             return souradnice;
         }
         souradnice.setX(-1);
         souradnice.setY(-1);
-      //  souradnice[0] = -1;
-       // souradnice[1] = -1;
         return souradnice;
     }
 }
