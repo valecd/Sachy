@@ -9,8 +9,9 @@ import java.util.ArrayList;
 
 /**
  *
- * @author NIKVAL
+ * @author Valecek, Maca, Beran, Pavlik
  */
+
 public class Hlavni {
     private ArrayList <Figurka> figurky = new ArrayList<>();
     Hlavni(){
