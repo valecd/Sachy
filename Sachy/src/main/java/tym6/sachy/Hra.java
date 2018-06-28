@@ -16,6 +16,8 @@ public class Hra {
     Hra() {
         figurky.add(new Dama(Barva.CERNA));
         figurky.add(new Dama(Barva.BILA));
+        figurky.add(new Strelec(Barva.CERNA));
+        figurky.add(new Strelec(Barva.BILA));
     }
 
     /**
