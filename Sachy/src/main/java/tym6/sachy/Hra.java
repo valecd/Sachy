@@ -4,14 +4,14 @@ import java.util.List;
 import java.util.ArrayList;
 
 /**
- * Třída pro vytváření jednotlivých instancí různých her.
- * V této třídě jsou metody obstarávající chod hry.
- * 
+ * Třída pro vytváření jednotlivých instancí různých her. V této třídě jsou
+ * metody obstarávající chod hry.
+ *
  * @author Valeczek, Maca, Beran, Pavlik
  */
 public class Hra {
 
-    private List<Figurka> figurky = new ArrayList<>();
+    protected static List<Figurka> figurky = new ArrayList<>();
 
     Hra() {
         figurky.add(new Dama(Barva.CERNA));
@@ -20,8 +20,12 @@ public class Hra {
         figurky.add(new Strelec(Barva.BILA));
         figurky.add(new Kral(Barva.CERNA));
         figurky.add(new Kral(Barva.BILA));
-        figurky.add(new Pesec(Barva.CERNA));
-        figurky.add(new Pesec(Barva.BILA));
+        for (int i = 0; i < 8; i++) {
+            figurky.add(new Pesec(Barva.BILA, this));
+        }
+        for (int i = 0; i < 8; i++) {
+            figurky.add(new Pesec(Barva.CERNA, this));
+        }
     }
 
     /**
@@ -47,14 +51,13 @@ public class Hra {
     }
 
     /**
-     * Metoda pro určení zda se na daném políčku nachází figurka a jaké je barvy.
-     * 
+     * Metoda pro určení zda se na daném políčku nachází figurka a jaké je
+     * barvy.
+     *
      * @param x Součadnice osy X.
      * @param y Souřadnice osy Y.
-     * @return vrací hodnotu 0,1,2 podle toho co se na poli nachází
-     * 0 = nic
-     * 1 = cerna
-     * 2 = bila
+     * @return vrací hodnotu 0,1,2 podle toho co se na poli nachází 0 = nic 1 =
+     * cerna 2 = bila
      */
     public int coJeNaPozici(int x, int y) {
         int hodnota = 0;
@@ -72,7 +75,7 @@ public class Hra {
 
     /**
      * Metoda pro vybrání konkrétní figurky ze seznamu figurek.
-     * 
+     *
      * @param souradnice Souřadnice na kterých se žádaná figurka nachází.
      * @return Vrací konkrétní figurku.
      */
@@ -87,7 +90,7 @@ public class Hra {
 
     /**
      * Metoda vracející seznam všech figurek.
-     * 
+     *
      * @return Seznam všech figurek.
      */
     public List<Figurka> getFigurky() {
