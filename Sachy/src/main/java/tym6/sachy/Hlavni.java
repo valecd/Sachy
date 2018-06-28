@@ -18,7 +18,7 @@ public class Hlavni {
     }
     public static final char cerna = 'B';
     public static final char bila = 'W';
-    public void pridejFigurku(Figurka figurka, char barva){
+    public void pridejFigurku(Figurka figurka){
         figurky.add(figurka);
     }
     public void odeberFigurkuFigurkou(int souradnice[]){
