@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * @author NIKVAL
  */
 public class Hlavni {
-    ArrayList <Figurka> figurky = new ArrayList<>();
+    private ArrayList <Figurka> figurky = new ArrayList<>();
     Hlavni(){
         
     }
@@ -33,5 +33,9 @@ public class Hlavni {
                 fig.setSouradnice();
             }
         }
+    }
+    
+    public ArrayList<Figurka> getFigurky(){
+        return figurky;
     }
 }
