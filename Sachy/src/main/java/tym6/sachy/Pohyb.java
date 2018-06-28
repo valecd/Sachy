@@ -138,10 +138,11 @@ public class Pohyb {
     }
 
     public static int[] Overeni(int souradnice[], int x, int y) {
-        if (souradnice[0] == x || souradnice[1] == y) {
-            souradnice[0] = -1;
-            souradnice[1] = -1;
+        if (souradnice[0] < 8 && souradnice[0] >=0&&souradnice[1] < 8 && souradnice[1] >=0) {
+            return souradnice;
         }
+        souradnice[0] = -1;
+        souradnice[1] = -1;
         return souradnice;
     }
 }

@@ -26,13 +26,14 @@ public class Okno extends javax.swing.JFrame {
     int velikost = 100;
     int posunX = 25;
     int posunY = 25;
-    
+    Hlavni hlavni;
     /**
      * Creates new form Okno
      */
     public Okno() {
         initComponents();
         addMouseListener(new MysListener());
+        hlavni = new Hlavni();
     }
     public BufferedImage hraciDeska(){
         BufferedImage bfi = new BufferedImage(850, 850, BufferedImage.TYPE_INT_ARGB);
