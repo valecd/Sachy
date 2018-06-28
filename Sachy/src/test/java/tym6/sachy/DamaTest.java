@@ -5,10 +5,6 @@
  */
 package tym6.sachy;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -24,14 +20,14 @@ public class DamaTest {
         Dama instance = new Dama(Barva.BILA);
         instance.setSouradnice(5, 5);
         int[][] expResult = {
-            {1, 0, 0, 0, 0, 0, 0, 0},
-            {0, 1, 0, 0, 0, 0, 0, 0},
-            {0, 0, 1, 0, 0, 0, 0, 0},
-            {0, 0, 0, 1, 0, 0, 0, 1},
-            {0, 0, 0, 0, 1, 0, 1, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 1, 0, 1, 0},
-            {0, 0, 0, 1, 0, 0, 0, 1}};
+            {1, 0, 0, 0, 0, 1, 0, 0},
+            {0, 1, 0, 0, 0, 1, 0, 0},
+            {0, 0, 1, 0, 0, 1, 0, 0},
+            {0, 0, 0, 1, 0, 1, 0, 1},
+            {0, 0, 0, 0, 1, 1, 1, 0},
+            {1, 1, 1, 1, 1, 0, 1, 1},
+            {0, 0, 0, 0, 1, 1, 1, 0},
+            {0, 0, 0, 1, 0, 1, 0, 1}};
         int[][] result = instance.mozneTahy();
         assertArrayEquals(expResult, result);
     }
