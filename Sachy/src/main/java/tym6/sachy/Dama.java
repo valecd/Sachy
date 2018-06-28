@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author User
+ * @author Valeczek, Maca, Beran, Pavlik
  */
 public class Dama implements Figurka {
     private int[][] polePohybu = new int[8][8];
