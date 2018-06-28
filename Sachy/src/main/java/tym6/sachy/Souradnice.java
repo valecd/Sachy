@@ -38,7 +38,7 @@ public class Souradnice {
     }
 
     private void checkRange(int value) {
-        if (value < 0 || value > 7) {
+        if (value < -2 || value > 8) {
             throw new IllegalArgumentException("Souradnice mimo rozsah: " + value);
         }
     }
