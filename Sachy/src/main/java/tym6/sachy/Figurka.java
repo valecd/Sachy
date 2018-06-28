@@ -13,13 +13,17 @@ public abstract class Figurka {
 
     // protected final Hra hra;
     private Souradnice souradnice = new Souradnice(0,0);
-    private Barva barva = Barva.BILA;
+    private String jmeno;
+    protected Barva barva = Barva.BILA;
     private int x;
     private int y;
-
-    public Figurka(Barva barva) {
+    
+    public String getJmeno(){
+        return this.jmeno;
     }
-
+    protected void setJmeno(String jmeno){
+        this.jmeno = jmeno;  
+    }
     //  protected int[] getSouradnice()
     public void setSouradnice(int x, int y) {
         souradnice.setX(x);

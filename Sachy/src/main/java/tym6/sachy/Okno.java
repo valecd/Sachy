@@ -10,11 +10,17 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Image;
 import java.awt.Panel;
 import java.awt.Rectangle;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 /**
@@ -22,74 +28,91 @@ import javax.swing.JPanel;
  * @author Valeczek, Maca, Beran, Pavlik
  */
 public class Okno extends javax.swing.JFrame {
+
     Boolean prvniSpusteni = true;
     int velikost = 100;
     int posunX = 25;
     int posunY = 25;
-    Hra hlavni;
+    Hra hra;
+
     /**
      * Creates new form Okno
      */
     public Okno() {
         initComponents();
         addMouseListener(new MysListener());
-        hlavni = new Hra();
+        hra = new Hra();
     }
-    public BufferedImage hraciDeska(){
+
+    public BufferedImage hraciDeska() {
         BufferedImage bfi = new BufferedImage(850, 850, BufferedImage.TYPE_INT_ARGB);
         Graphics2D gr = bfi.createGraphics();
-        
-        
-        
-        char znaky[] = {'a','b','c','d','e','f','g','h'};
-        for(int i=0; i<8; i++){
+
+        char znaky[] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'};
+        for (int i = 0; i < 8; i++) {
             gr.setColor(Color.blue);
             gr.setFont(new Font("Serif", Font.BOLD, 20));
-            gr.drawString(znaky[i]+"", velikost/2+posunX+i*velikost-2, 18);
-            for(int j=0; j<8; j++){
+            gr.drawString(znaky[i] + "", velikost / 2 + posunX + i * velikost - 2, 18);
+            for (int j = 0; j < 8; j++) {
                 gr.setColor(Color.blue);
-            gr.setFont(new Font("Serif", Font.BOLD, 20));
-            gr.drawString(8-i+"", 5, velikost/2+posunY+i*velikost+5);
-                if(i%2==0){
-                    if(j%2==0){
+                gr.setFont(new Font("Serif", Font.BOLD, 20));
+                gr.drawString(8 - i + "", 5, velikost / 2 + posunY + i * velikost + 5);
+                if (i % 2 == 0) {
+                    if (j % 2 == 0) {
                         gr.setColor(Color.LIGHT_GRAY);
-                        gr.fill(new Rectangle(posunX+j*velikost, posunY+i*velikost, velikost, velikost));
-                    }else{
+                        gr.fill(new Rectangle(posunX + j * velikost, posunY + i * velikost, velikost, velikost));
+                    } else {
                         gr.setColor(Color.DARK_GRAY);
-                        gr.fill(new Rectangle(posunX+j*velikost, posunY+i*velikost, velikost, velikost));
+                        gr.fill(new Rectangle(posunX + j * velikost, posunY + i * velikost, velikost, velikost));
                     }
-                }else{
-                    if(j%2==0){
+                } else {
+                    if (j % 2 == 0) {
                         gr.setColor(Color.DARK_GRAY);
-                        gr.fill(new Rectangle(posunX+j*velikost, posunY+i*velikost, velikost, velikost));
-                    }else{
+                        gr.fill(new Rectangle(posunX + j * velikost, posunY + i * velikost, velikost, velikost));
+                    } else {
                         gr.setColor(Color.LIGHT_GRAY);
-                        gr.fill(new Rectangle(posunX+j*velikost, posunY+i*velikost, velikost, velikost));
+                        gr.fill(new Rectangle(posunX + j * velikost, posunY + i * velikost, velikost, velikost));
                     }
                 }
             }
         }
-        
+
         return bfi;
     }
-    
+
     @Override
     public void paint(Graphics g) {
-        super.paint(g); 
-        if(prvniSpusteni ==  true){
+        super.paint(g);
+        if (prvniSpusteni == true) {
             jPanel1.getGraphics().drawImage(hraciDeska(), 0, 0, null);
             prvniSpusteni = false;
         }
     }
-    
-    public int []najdiSouradniceCtverce(int x, int y){
-        int pole[] = new int[2]; 
-        for(int i=0; i<8; i++){
-            for(int j=0; j<8; j++){
-                if(x>=j*velikost+posunX&&x<=j*velikost+posunX+velikost&&y>=i*velikost+posunY+this.getInsets().top&&y<=i*velikost+posunY+this.getInsets().top+velikost){
+
+    public void vykresliFigurky() {
+
+        //System.out.println("./"+hra.getFigurky().get(0).getJmeno()+((hra.getFigurky().get(0).getBarva()==Barva.BILA)?"b":"c")+".png");
+        for (Figurka fig : hra.getFigurky()) {
+            try {
+                //BufferedImage img = ImageIO.read(new File("C:\\Users\\NIKVAL\\Documents\\NetBeansProjects\\Sachy\\Sachy\\src\\main\\java\\tym6\\sachy\\damab.png"));
+                Image img = ImageIO.read(new File("./"+fig.getJmeno()+((fig.getBarva()==Barva.BILA)?"b":"c")+".png"));
+                jPanel1.getGraphics().drawImage(img, fig.getSouradnice().getX()* velikost + posunX, fig.getSouradnice().getY() * velikost + posunY, null);
+
+            } catch (IOException ex) {
+                Logger.getLogger(Okno.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+
+    }
+
+    public int[] najdiSouradniceCtverce(int x, int y) {
+        int pole[] = new int[2];
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                if (x >= j * velikost + posunX + this.getInsets().left && x <= j * velikost + posunX + velikost + this.getInsets().left && y >= i * velikost + posunY + this.getInsets().top && y <= i * velikost + posunY + this.getInsets().top + velikost) {
                     //System.out.println("souradnice: "+pole[0]+" i"+i+" "+" y"+y+" "+pole[1]);
-                    pole[0] = j*velikost+posunX;
-                    pole[1] = i*velikost+posunY;
+                    pole[0] = j * velikost + posunX;
+                    pole[1] = i * velikost + posunY;
                     BufferedImage bfi = new BufferedImage(850, 850, BufferedImage.TYPE_INT_ARGB);
                     Graphics2D gr = bfi.createGraphics();
                     gr.setColor(Color.YELLOW);
@@ -100,10 +123,10 @@ public class Okno extends javax.swing.JFrame {
                 }
             }
         }
-         
+        vykresliFigurky();
         return pole;
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -171,7 +194,7 @@ public class Okno extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       jPanel1.getGraphics().drawImage(hraciDeska(), 0, 0, null);
+        jPanel1.getGraphics().drawImage(hraciDeska(), 0, 0, null);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -215,15 +238,14 @@ public class Okno extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
-private class MysListener extends MouseAdapter{
-    @Override
-    public void mouseClicked(MouseEvent event){
-        int x = event.getX();
-        int y = event.getY();
-        System.out.println("asdfůa");
-        najdiSouradniceCtverce(x, y);
+private class MysListener extends MouseAdapter {
+
+        @Override
+        public void mouseClicked(MouseEvent event) {
+            int x = event.getX();
+            int y = event.getY();
+            najdiSouradniceCtverce(x, y);
+        }
     }
-}
 
 }
-

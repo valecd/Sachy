@@ -13,12 +13,17 @@ import java.util.ArrayList;
  * @author Valeczek, Maca, Beran, Pavlik
  */
 public class Dama extends Figurka {
-
+    
     private int[][] polePohybu = new int[8][8];
 
-    public Dama(Barva barva) {
-        super(barva);
+    Dama(Barva barva) {
+        super.barva = barva;
+        setJmeno("dama");
         if (barva.equals(Barva.BILA)) {
+            setSouradnice(3, 7);
+           
+        }else{
+            setSouradnice(3, 0);
         }
     }
 

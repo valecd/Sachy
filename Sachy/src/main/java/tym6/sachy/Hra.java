@@ -17,7 +17,9 @@ public class Hra {
     private List<Figurka> figurky = new ArrayList<>();
 
     Hra() {
-
+        System.out.println("velikost: "+figurky.size());
+        figurky.add(new Dama(Barva.CERNA));
+        System.out.println("velikost: "+figurky.size());
     }
 
     private void pridejFigurku(Figurka figurka) {
@@ -39,25 +41,10 @@ public class Hra {
             }
         }
     }*/
-}
-    
-   
-/*
-
-
-List<Coordinates> dostupneTahy(x, y);
-    
-    Figurka getFigurka(x, y)
-
     public List<Figurka> getFigurky() {
+       
         return figurky;
+
     }
+
 }
-
-===============
-
-hra.tah({1, 2}, {3, 4});
-
-hra.getFigurka(1, 2).tah(3, 4)
-
-*/
