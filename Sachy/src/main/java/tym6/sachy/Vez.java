@@ -1,14 +1,19 @@
 package tym6.sachy;
 
 /**
- *
- * @author Libor
+ * Tato třída reprezentuje jednu konkrétní figurku věže na hracím poli.
+ * Třída obsahuje metody týkající se konkrétního typu figurky.
+ * 
+ * @author Valeczek, Maca, Beran, Pavlik
  */
-// Třída pro vytváření objektu, reprezentujího figurku věže.
 public class Vez extends Figurka {
 
+    /**
+     *
+     * @param barva
+     */
     public Vez(Barva barva) {
-        super(barva);
+       // super(barva);
     }
     
     

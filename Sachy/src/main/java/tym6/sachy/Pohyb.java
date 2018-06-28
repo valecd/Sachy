@@ -1,16 +1,19 @@
 package tym6.sachy;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 /**
- *
+ * Tato třída slouží pro výpočet pohybu jednotlivých figurek.
+ * 
  * @author Valeczek, Maca, Beran, Pavlik
  */
 public class Pohyb {
-    //Pohyb nahoru
+
+    /**
+     * Tato metoda vypočítává pohyb figurky po ose Y směrem nahoru.
+     * 
+     * @param x Souřadnice na ose x.
+     * @param y Souřadnice na ose y.
+     * @return Vrací nové souřadnice.
+     */
     public static Souradnice PosunUp(int x, int y) {
         if (y > 0) {
             y--;
@@ -21,6 +24,13 @@ public class Pohyb {
         return souradnice;
     }
 
+    /**
+     * Tato metoda vypočítává pohyb figurky po ose Y směrem dolu.
+     * 
+     * @param x Souřadnice na ose x.
+     * @param y Souřadnice na ose y.
+     * @return Vrací nové souřadnice.
+     */
     public static Souradnice PosunDown(int x, int y) {
         if (y < 8) {
             y++;
@@ -31,6 +41,13 @@ public class Pohyb {
         return souradnice;
     }
 
+    /**
+     * Tato metoda vypočítává pohyb figurky po ose X směrem doleva.
+     * 
+     * @param x Souřadnice na ose x.
+     * @param y Souřadnice na ose y.
+     * @return Vrací nové souřadnice.
+     */
     public static Souradnice PosunLeft(int x, int y) {
         if (x > 0) {
             x--;
@@ -41,6 +58,13 @@ public class Pohyb {
         return souradnice;
     }
 
+    /**
+     * Tato metoda vypočítává pohyb figurky po ose X směrem doprava.
+     * 
+     * @param x Souřadnice na ose x.
+     * @param y Souřadnice na ose y.
+     * @return Vrací nové souřadnice.
+     */
     public static Souradnice PosunRight(int x, int y) {
         if (x < 8) {
             x++;
@@ -51,30 +75,65 @@ public class Pohyb {
         return souradnice;
     }
 
+    /**
+     * Tato metoda vypočítává pohyb figurky po ose X a Y směrem nahoru a doprava.
+     * 
+     * @param x Souřadnice na ose x.
+     * @param y Souřadnice na ose y.
+     * @return Vrací nové souřadnice.
+     */
     public static Souradnice PosunUpRight(int x, int y) {
         Souradnice souradnice = PosunUp(x, y);
         souradnice = PosunRight(souradnice.getX(), souradnice.getY());
-        return Overeni(souradnice, x, y);
+        return Overeni(souradnice);
     }
 
+    /**
+     * Tato metoda vypočítává pohyb figurky po ose X a Y směrem dolu a doprava.
+     * 
+     * @param x Souřadnice na ose x.
+     * @param y Souřadnice na ose y.
+     * @return Vrací nové souřadnice.
+     */
     public static Souradnice PosunDownRight(int x, int y) {
         Souradnice souradnice = PosunDown(x, y);
         souradnice = PosunRight(souradnice.getX(), souradnice.getY());
-        return Overeni(souradnice, x, y);
+        return Overeni(souradnice);
     }
 
+    /**
+     * Tato metoda vypočítává pohyb figurky po ose X a Y směrem nahoru a doleva.
+     * 
+     * @param x Souřadnice na ose x.
+     * @param y Souřadnice na ose y.
+     * @return Vrací nové souřadnice.
+     */
     public static Souradnice PosunUpLeft(int x, int y) {
         Souradnice souradnice = PosunUp(x, y);
         souradnice = PosunLeft(souradnice.getX(), souradnice.getY());
-        return Overeni(souradnice, x, y);
+        return Overeni(souradnice);
     }
 
+    /**
+     * Tato metoda vypočítává pohyb figurky po ose X a Y směrem dolu a doleva.
+     * 
+     * @param x Souřadnice na ose x.
+     * @param y Souřadnice na ose y.
+     * @return Vrací nové souřadnice.
+     */
     public static Souradnice PosunDownLeft(int x, int y) {
         Souradnice souradnice = PosunDown(x, y);
         souradnice = PosunLeft(souradnice.getX(), souradnice.getY());
-        return Overeni(souradnice, x, y);
+        return Overeni(souradnice);
     }
 
+    /**
+     * Tato metoda vypočítává pohyb koně po ose X a Y směrem nahoru a doprava.
+     * 
+     * @param x Souřadnice na ose x.
+     * @param y Souřadnice na ose y.
+     * @return Vrací nové souřadnice.
+     */
     public static Souradnice KunPosunUpRight(int x, int y) {
         Souradnice souradnice = new Souradnice(x, y);
         if (x < 8 && y > 1) {
@@ -87,6 +146,13 @@ public class Pohyb {
 
     }
 
+    /**
+     * Tato metoda vypočítává pohyb koně po ose X a Y směrem dolu a doprava.
+     * 
+     * @param x Souřadnice na ose x.
+     * @param y Souřadnice na ose y.
+     * @return Vrací nové souřadnice.
+     */
     public static Souradnice KunPosunDownRight(int x, int y) {
         Souradnice souradnice = new Souradnice(x, y);
         if (x < 8 && y < 7) {
@@ -98,6 +164,13 @@ public class Pohyb {
         return souradnice;
     }
 
+    /**
+     * Tato metoda vypočítává pohyb koně po ose X a Y směrem nahoru a doleva.
+     * 
+     * @param x Souřadnice na ose x.
+     * @param y Souřadnice na ose y.
+     * @return Vrací nové souřadnice.
+     */
     public static Souradnice KunPosunUpLeft(int x, int y) {
         Souradnice souradnice = new Souradnice(x, y);
         if (x > 0 && y > 1) {
@@ -109,6 +182,13 @@ public class Pohyb {
         return souradnice;
     }
 
+    /**
+     * Tato metoda vypočítává pohyb koně po ose X a Y směrem dolu a doleva.
+     * 
+     * @param x Souřadnice na ose x.
+     * @param y Souřadnice na ose y.
+     * @return Vrací nové souřadnice.
+     */
     public static Souradnice KunPosunDownLeft(int x, int y) {
         Souradnice souradnice = new Souradnice(x, y);
         if (x > 0 && y < 7) {
@@ -119,7 +199,14 @@ public class Pohyb {
         return souradnice;
     }
 
-    public static Souradnice Overeni(Souradnice souradnice, int x, int y) {
+    /**
+     * Tato metoda ověřuje, že vypočítané souřadnice jsou stále v daném rozsahu
+     * velikosti šachovnice.
+     * 
+     * @param souradnice Ověřované souřadnice.
+     * @return
+     */
+    public static Souradnice Overeni(Souradnice souradnice) {
         if (souradnice.getX() < 8 && souradnice.getX() >= 0 && souradnice.getY() < 8 && souradnice.getY()>= 0) {
             return souradnice;
         }
