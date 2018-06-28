@@ -8,13 +8,15 @@ package tym6.sachy;
 
 /**
  *
- * @author Valeczek, Maca, Beran, Pavlik
+ * @author Valecek, Maca, Beran, Pavlik
  */
+// Třída pro vytváření objektu, reprezentující Pohyb Figurek. 
 public class Pohyb {
 
     public static void main(String[] args) {
-        //Deklarace 2 rozmerneho pole (sachovnice) 8x8
+        //Deklarace 2 rozměrného pole (Šachovnice) o rozměrech 8x8 políček
         char pole[][] = new char[8][8];
+        //Naplnění 2 rozměrného pole ' '
         for (int i = 0; i < pole.length; i++) {
             for (int j = 0; j < pole.length; j++) {
                 pole[j][i] = ' ';
@@ -28,7 +30,7 @@ public class Pohyb {
         //while()
     }
     
-    //Pohyb nahoru
+    //Pohyb Nahoru ↑
     public static int[] PosunUp(int x, int y) {
         if (y > 0) {
             y--;
@@ -38,7 +40,8 @@ public class Pohyb {
         int souradnice[] = {-1, -1};
             return souradnice;
     }
-
+    
+    //Pohyb Dolu ↓
     public static int[] PosunDown(int x, int y) {
         if (y < 8) {
             y++;
@@ -49,6 +52,7 @@ public class Pohyb {
             return souradnice;
     }
 
+    //Pohyb do Leva ←
     public static int[] PosunLeft(int x, int y) {
         if (x > 0) {
             x--;
@@ -58,7 +62,8 @@ public class Pohyb {
         int souradnice[] = {-1, -1};
             return souradnice;
     }
-
+    
+    //Pohyb do Prava →
     public static int[] PosunRight(int x, int y) {
         if (x < 8) {
             x++;
@@ -69,24 +74,28 @@ public class Pohyb {
             return souradnice;
     }
 
+    //Pohyb Nahoru do Prava / ↑→
     public static int[] PosunUpRight(int x, int y) {
         int souradnice[] = PosunUp(x, y);
         souradnice = PosunRight(souradnice[0], souradnice[1]);
         return Overeni(souradnice, x, y);
     }
 
+    //Pohyb Dolu do Prava \ ↓→
     public static int[] PosunDownRight(int x, int y) {
         int souradnice[] = PosunDown(x, y);
         souradnice = PosunRight(souradnice[0], souradnice[1]);
         return Overeni(souradnice, x, y);
     }
 
+    //Pohyb Nahoru do Leva \ ↑←
     public static int[] PosunUpLeft(int x, int y) {
         int souradnice[] = PosunUp(x, y);
         souradnice = PosunLeft(souradnice[0], souradnice[1]);
         return Overeni(souradnice, x, y);
     }
 
+    //Pohyb Dolu do Leva / ↓←
     public static int[] PosunDownLeft(int x, int y) {
         int souradnice[] = PosunDown(x, y);
         souradnice = PosunLeft(souradnice[0], souradnice[1]);
