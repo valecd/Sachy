@@ -12,22 +12,6 @@ package tym6.sachy;
  */
 public class Pohyb {
 
-    public static void main(String[] args) {
-        //Deklarace 2 rozmerneho pole (sachovnice) 8x8
-        char pole[][] = new char[8][8];
-        for (int i = 0; i < pole.length; i++) {
-            for (int j = 0; j < pole.length; j++) {
-                pole[j][i] = ' ';
-            }
-        }
-
-        pole[3][5] = 'X';
-
-        int souradnice[] = PosunUp(0,0);
-        System.out.println("x:" + souradnice[0] + " y:" + souradnice[1]);
-        //while()
-    }
-    
     //Pohyb nahoru
     public static int[] PosunUp(int x, int y) {
         if (y > 0) {

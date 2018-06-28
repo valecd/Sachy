@@ -15,8 +15,6 @@ import java.util.ArrayList;
 public class Dama extends Figurka {
 
     private int[][] polePohybu = new int[8][8];
-    private int[] souradnice = new int[2];
-    private Barva barva;
 
     public Dama(Barva barva) {
         super(barva);
@@ -24,16 +22,8 @@ public class Dama extends Figurka {
         }
     }
 
-    public int[] getSouradnice() {
-        return souradnice;
-    }
-
-    public void setSouradnice(int[] souradnice) {
-        this.souradnice = souradnice;
-    }
-
     public int[][] mozneTahy() {
-        int xy[] = {souradnice[0], souradnice[1]};
+        int xy[] = {this.getSouradnice().getX(), this.getSouradnice().getY()};
         while (true) {
             xy = Pohyb.PosunUpLeft(xy[0], xy[1]);
             if (xy[0] == -1 && xy[1] == -1) {
@@ -42,8 +32,8 @@ public class Dama extends Figurka {
                 polePohybu[xy[0]][xy[1]] = 1;
             }
         }
-        xy[0] = souradnice[0];
-        xy[1] = souradnice[1];
+        xy[0] = this.getSouradnice().getX();
+        xy[1] = this.getSouradnice().getY();
         while (true) {
             xy = Pohyb.PosunDownLeft(xy[0], xy[1]);
             if (xy[0] == -1 && xy[1] == -1) {
@@ -76,10 +66,5 @@ public class Dama extends Figurka {
             System.out.println("");
         }
         return polePohybu;
-    }
-
-    @Override
-    public Barva getBarva() {
-        return barva;
     }
 }
