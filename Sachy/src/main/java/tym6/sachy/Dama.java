@@ -25,7 +25,7 @@ public class Dama extends Figurka {
     public int[][] mozneTahy() {
         Souradnice xy = new Souradnice(this.getSouradnice().getX(), this.getSouradnice().getY());
         while (true) {
-            System.out.println(xy.getX()+" "+xy.getY());
+            System.out.println(xy.getX() + " " + xy.getY());
             xy = Pohyb.PosunUpLeft(xy.getX(), xy.getY());
             if (xy.getX() == -1 && xy.getY() == -1) {
                 break;
@@ -63,6 +63,51 @@ public class Dama extends Figurka {
                 polePohybu[xy.getX()][xy.getY()] = 1;
             }
         }
+        xy.setX(this.getSouradnice().getX());
+        xy.setY(this.getSouradnice().getY());
+        
+        while (true) {
+            xy = Pohyb.PosunUp(xy.getX(), xy.getY());
+            if (xy.getX() == -1 && xy.getY() == -1) {
+                break;
+            } else {
+                polePohybu[xy.getX()][xy.getY()] = 1;
+            }
+        }
+        xy.setX(this.getSouradnice().getX());
+        xy.setY(this.getSouradnice().getY());
+       
+        while (true) {
+            xy = Pohyb.PosunDown(xy.getX(), xy.getY());
+            if (xy.getX() == -1 && xy.getY() == -1) {
+                break;
+            } else {
+                polePohybu[xy.getX()][xy.getY()] = 1;
+            }
+        }
+        xy.setX(this.getSouradnice().getX());
+        xy.setY(this.getSouradnice().getY());
+       
+        while (true) {
+            xy = Pohyb.PosunRight(xy.getX(), xy.getY());
+            if (xy.getX() == -1 && xy.getY() == -1) {
+                break;
+            } else {
+                polePohybu[xy.getX()][xy.getY()] = 1;
+            }
+        }
+        xy.setX(this.getSouradnice().getX());
+        xy.setY(this.getSouradnice().getY());
+        
+        while (true) {
+            xy = Pohyb.PosunLeft(xy.getX(), xy.getY());
+            if (xy.getX() == -1 && xy.getY() == -1) {
+                break;
+            } else {
+                polePohybu[xy.getX()][xy.getY()] = 1;
+            }
+        }
+        
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
                 System.out.print(polePohybu[j][i]);
