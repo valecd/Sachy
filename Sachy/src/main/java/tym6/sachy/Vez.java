@@ -4,9 +4,7 @@ package tym6.sachy;
  *
  * @author Libor
  */
-
 // Třída pro vytváření objektu, reprezentujího figurku věže.
-
 public class Vez implements Figurka {
 
     private int[][] polePohybu = new int[8][8];
@@ -20,6 +18,11 @@ public class Vez implements Figurka {
 
     @Override
     public int[] getSouradnice() {
+        return souradnice;
+    }
+
+    @Override
+    public int[] setSouradnice() {
         return souradnice;
     }
 

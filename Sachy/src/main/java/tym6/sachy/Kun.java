@@ -4,9 +4,7 @@ package tym6.sachy;
  *
  * @author Libor
  */
-
 //Třída pro vytváření objektu, reprezentujícího figurku koně
-
 public class Kun implements Figurka {
 
     private int[][] polePohybu = new int[8][8];
@@ -20,6 +18,11 @@ public class Kun implements Figurka {
 
     @Override
     public int[] getSouradnice() {
+        return souradnice;
+    }
+
+    @Override
+    public int[] setSouradnice() {
         return souradnice;
     }
 
