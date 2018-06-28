@@ -32,7 +32,7 @@ public class Pohyb {
      * @return Vrací nové souřadnice.
      */
     public static Souradnice PosunDown(int x, int y) {
-        if (y < 8) {
+        if (y < 7) {
             y++;
             Souradnice souradnice = new Souradnice(x, y);
             return souradnice;
@@ -66,7 +66,7 @@ public class Pohyb {
      * @return Vrací nové souřadnice.
      */
     public static Souradnice PosunRight(int x, int y) {
-        if (x < 8) {
+        if (x < 7) {
             x++;
             Souradnice souradnice = new Souradnice(x, y);
             return souradnice;
@@ -136,7 +136,7 @@ public class Pohyb {
      */
     public static Souradnice KunPosunUpRight(int x, int y) {
         Souradnice souradnice = new Souradnice(x, y);
-        if (x < 8 && y > 1) {
+        if (x < 7 && y > 1) {
             souradnice = PosunUp(x, y);
             souradnice = PosunUp(souradnice.getX(), souradnice.getY());
             souradnice = PosunRight(souradnice.getX(), souradnice.getY());
@@ -155,7 +155,7 @@ public class Pohyb {
      */
     public static Souradnice KunPosunDownRight(int x, int y) {
         Souradnice souradnice = new Souradnice(x, y);
-        if (x < 8 && y < 7) {
+        if (x < 7 && y < 7) {
             souradnice = PosunDown(x, y);
             souradnice = PosunDown(souradnice.getX(), souradnice.getY());
             souradnice = PosunRight(souradnice.getX(), souradnice.getY());
