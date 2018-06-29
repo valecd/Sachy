@@ -48,7 +48,8 @@ public class Vez extends Figurka {
      * @return Vrací dvourozměrné pole, kde jsou vyznačena dostupná políčka pro
      * pohyb.
      */
-    public int[][] mozneTahy() {
+    @Override
+    protected int[][] vypocitejMozneTahy() {
         polePohybu = new int[8][8];
         Souradnice xy = new Souradnice(this.getSouradnice().getX(), this.getSouradnice().getY());
 

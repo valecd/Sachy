@@ -1,18 +1,18 @@
 package tym6.sachy;
 
 /**
- * Tato třída slouží pro výpočet pohybu jednotlivých figurek.
+ * Tato tĹ™Ă­da slouĹľĂ­ pro vĂ˝poÄŤet pohybu jednotlivĂ˝ch figurek.
  * 
  * @author Valeczek, Maca, Beran, Pavlik
  */
 public class Pohyb {
 
     /**
-     * Tato metoda vypočítává pohyb figurky po ose Y směrem nahoru.
+     * Tato metoda vypoÄŤĂ­tĂˇvĂˇ pohyb figurky po ose Y smÄ›rem nahoru.
      * 
-     * @param x Souřadnice na ose x.
-     * @param y Souřadnice na ose y.
-     * @return Vrací nové souřadnice.
+     * @param x SouĹ™adnice na ose x.
+     * @param y SouĹ™adnice na ose y.
+     * @return VracĂ­ novĂ© souĹ™adnice.
      */
     public static Souradnice PosunUp(int x, int y) {
         if (y > 0) {
@@ -25,11 +25,11 @@ public class Pohyb {
     }
 
     /**
-     * Tato metoda vypočítává pohyb figurky po ose Y směrem dolu.
+     * Tato metoda vypoÄŤĂ­tĂˇvĂˇ pohyb figurky po ose Y smÄ›rem dolu.
      * 
-     * @param x Souřadnice na ose x.
-     * @param y Souřadnice na ose y.
-     * @return Vrací nové souřadnice.
+     * @param x SouĹ™adnice na ose x.
+     * @param y SouĹ™adnice na ose y.
+     * @return VracĂ­ novĂ© souĹ™adnice.
      */
     public static Souradnice PosunDown(int x, int y) {
         if (y < 7) {
@@ -42,11 +42,11 @@ public class Pohyb {
     }
 
     /**
-     * Tato metoda vypočítává pohyb figurky po ose X směrem doleva.
+     * Tato metoda vypoÄŤĂ­tĂˇvĂˇ pohyb figurky po ose X smÄ›rem doleva.
      * 
-     * @param x Souřadnice na ose x.
-     * @param y Souřadnice na ose y.
-     * @return Vrací nové souřadnice.
+     * @param x SouĹ™adnice na ose x.
+     * @param y SouĹ™adnice na ose y.
+     * @return VracĂ­ novĂ© souĹ™adnice.
      */
     public static Souradnice PosunLeft(int x, int y) {
         if (x > 0) {
@@ -59,11 +59,11 @@ public class Pohyb {
     }
 
     /**
-     * Tato metoda vypočítává pohyb figurky po ose X směrem doprava.
+     * Tato metoda vypoÄŤĂ­tĂˇvĂˇ pohyb figurky po ose X smÄ›rem doprava.
      * 
-     * @param x Souřadnice na ose x.
-     * @param y Souřadnice na ose y.
-     * @return Vrací nové souřadnice.
+     * @param x SouĹ™adnice na ose x.
+     * @param y SouĹ™adnice na ose y.
+     * @return VracĂ­ novĂ© souĹ™adnice.
      */
     public static Souradnice PosunRight(int x, int y) {
         if (x < 7) {
@@ -76,11 +76,11 @@ public class Pohyb {
     }
 
     /**
-     * Tato metoda vypočítává pohyb figurky po ose X a Y směrem nahoru a doprava.
+     * Tato metoda vypoÄŤĂ­tĂˇvĂˇ pohyb figurky po ose X a Y smÄ›rem nahoru a doprava.
      * 
-     * @param x Souřadnice na ose x.
-     * @param y Souřadnice na ose y.
-     * @return Vrací nové souřadnice.
+     * @param x SouĹ™adnice na ose x.
+     * @param y SouĹ™adnice na ose y.
+     * @return VracĂ­ novĂ© souĹ™adnice.
      */
     public static Souradnice PosunUpRight(int x, int y) {
         Souradnice souradnice = PosunUp(x, y);
@@ -89,11 +89,11 @@ public class Pohyb {
     }
 
     /**
-     * Tato metoda vypočítává pohyb figurky po ose X a Y směrem dolu a doprava.
+     * Tato metoda vypoÄŤĂ­tĂˇvĂˇ pohyb figurky po ose X a Y smÄ›rem dolu a doprava.
      * 
-     * @param x Souřadnice na ose x.
-     * @param y Souřadnice na ose y.
-     * @return Vrací nové souřadnice.
+     * @param x SouĹ™adnice na ose x.
+     * @param y SouĹ™adnice na ose y.
+     * @return VracĂ­ novĂ© souĹ™adnice.
      */
     public static Souradnice PosunDownRight(int x, int y) {
         Souradnice souradnice = PosunDown(x, y);
@@ -102,11 +102,11 @@ public class Pohyb {
     }
 
     /**
-     * Tato metoda vypočítává pohyb figurky po ose X a Y směrem nahoru a doleva.
+     * Tato metoda vypoÄŤĂ­tĂˇvĂˇ pohyb figurky po ose X a Y smÄ›rem nahoru a doleva.
      * 
-     * @param x Souřadnice na ose x.
-     * @param y Souřadnice na ose y.
-     * @return Vrací nové souřadnice.
+     * @param x SouĹ™adnice na ose x.
+     * @param y SouĹ™adnice na ose y.
+     * @return VracĂ­ novĂ© souĹ™adnice.
      */
     public static Souradnice PosunUpLeft(int x, int y) {
         Souradnice souradnice = PosunUp(x, y);
@@ -115,11 +115,11 @@ public class Pohyb {
     }
 
     /**
-     * Tato metoda vypočítává pohyb figurky po ose X a Y směrem dolu a doleva.
+     * Tato metoda vypoÄŤĂ­tĂˇvĂˇ pohyb figurky po ose X a Y smÄ›rem dolu a doleva.
      * 
-     * @param x Souřadnice na ose x.
-     * @param y Souřadnice na ose y.
-     * @return Vrací nové souřadnice.
+     * @param x SouĹ™adnice na ose x.
+     * @param y SouĹ™adnice na ose y.
+     * @return VracĂ­ novĂ© souĹ™adnice.
      */
     public static Souradnice PosunDownLeft(int x, int y) {
         Souradnice souradnice = PosunDown(x, y);
@@ -128,11 +128,11 @@ public class Pohyb {
     }
 
     /**
-     * Tato metoda vypočítává pohyb koně po ose X a Y směrem nahoru a doprava.
+     * Tato metoda vypoÄŤĂ­tĂˇvĂˇ pohyb konÄ› po ose X a Y smÄ›rem nahoru a doprava.
      * 
-     * @param x Souřadnice na ose x.
-     * @param y Souřadnice na ose y.
-     * @return Vrací nové souřadnice.
+     * @param x SouĹ™adnice na ose x.
+     * @param y SouĹ™adnice na ose y.
+     * @return VracĂ­ novĂ© souĹ™adnice.
      */
     public static Souradnice KunPosunUpRight(int x, int y) {
         Souradnice souradnice = new Souradnice(x, y);
@@ -147,11 +147,11 @@ public class Pohyb {
     }
 
     /**
-     * Tato metoda vypočítává pohyb koně po ose X a Y směrem dolu a doprava.
+     * Tato metoda vypoÄŤĂ­tĂˇvĂˇ pohyb konÄ› po ose X a Y smÄ›rem dolu a doprava.
      * 
-     * @param x Souřadnice na ose x.
-     * @param y Souřadnice na ose y.
-     * @return Vrací nové souřadnice.
+     * @param x SouĹ™adnice na ose x.
+     * @param y SouĹ™adnice na ose y.
+     * @return VracĂ­ novĂ© souĹ™adnice.
      */
     public static Souradnice KunPosunDownRight(int x, int y) {
         Souradnice souradnice = new Souradnice(x, y);
@@ -165,11 +165,11 @@ public class Pohyb {
     }
 
     /**
-     * Tato metoda vypočítává pohyb koně po ose X a Y směrem nahoru a doleva.
+     * Tato metoda vypoÄŤĂ­tĂˇvĂˇ pohyb konÄ› po ose X a Y smÄ›rem nahoru a doleva.
      * 
-     * @param x Souřadnice na ose x.
-     * @param y Souřadnice na ose y.
-     * @return Vrací nové souřadnice.
+     * @param x SouĹ™adnice na ose x.
+     * @param y SouĹ™adnice na ose y.
+     * @return VracĂ­ novĂ© souĹ™adnice.
      */
     public static Souradnice KunPosunUpLeft(int x, int y) {
         Souradnice souradnice = new Souradnice(x, y);
@@ -183,11 +183,11 @@ public class Pohyb {
     }
 
     /**
-     * Tato metoda vypočítává pohyb koně po ose X a Y směrem dolu a doleva.
+     * Tato metoda vypoÄŤĂ­tĂˇvĂˇ pohyb konÄ› po ose X a Y smÄ›rem dolu a doleva.
      * 
-     * @param x Souřadnice na ose x.
-     * @param y Souřadnice na ose y.
-     * @return Vrací nové souřadnice.
+     * @param x SouĹ™adnice na ose x.
+     * @param y SouĹ™adnice na ose y.
+     * @return VracĂ­ novĂ© souĹ™adnice.
      */
     public static Souradnice KunPosunDownLeft(int x, int y) {
         Souradnice souradnice = new Souradnice(x, y);
@@ -245,10 +245,10 @@ public class Pohyb {
     }
 
     /**
-     * Tato metoda ověřuje, že vypočítané souřadnice jsou stále v daném rozsahu
-     * velikosti šachovnice.
+     * Tato metoda ovÄ›Ĺ™uje, Ĺľe vypoÄŤĂ­tanĂ© souĹ™adnice jsou stĂˇle v danĂ©m rozsahu
+     * velikosti Ĺˇachovnice.
      * 
-     * @param souradnice Ověřované souřadnice.
+     * @param souradnice OvÄ›Ĺ™ovanĂ© souĹ™adnice.
      * @return
      */
     public static Souradnice Overeni(Souradnice souradnice) {

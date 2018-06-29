@@ -25,7 +25,8 @@ public class Pesec extends Figurka {
         return FigurkaTyp.PESEC;
     }
 
-    public int[][] mozneTahy() {
+    @Override
+    protected int[][] vypocitejMozneTahy() {
         polePohybu = new int[8][8];
         Souradnice xy = new Souradnice(this.getSouradnice().getX(), this.getSouradnice().getY());
         if (true) {
