@@ -198,6 +198,51 @@ public class Pohyb {
         }
         return souradnice;
     }
+    
+     public static Souradnice KunPosunUpRightRight(int x, int y) {
+        Souradnice souradnice = new Souradnice(x, y);
+        if (x < 8 && y > 1) {
+            souradnice = PosunRight(x, y);
+            souradnice = PosunRight(souradnice.getX(), souradnice.getY());
+            souradnice = PosunUp(souradnice.getX(), souradnice.getY());
+            return souradnice;
+        }
+        return souradnice;
+
+    }
+    
+    public static Souradnice KunPosunDownRightRight(int x, int y) {
+        Souradnice souradnice = new Souradnice(x, y);
+        if (x < 8 && y > 1) {
+            souradnice = PosunRight(x, y);
+            souradnice = PosunRight(souradnice.getX(), souradnice.getY());
+            souradnice = PosunDown(souradnice.getX(), souradnice.getY());
+            return souradnice;
+        }
+        return souradnice;
+
+    }
+    
+    public static Souradnice KunPosunUpLeftLeft(int x, int y) {
+        Souradnice souradnice = new Souradnice(x, y);
+        if (x > 0 && y > 1) {
+            souradnice = PosunLeft(x, y);
+            souradnice = PosunLeft(souradnice.getX(), souradnice.getY());
+            souradnice = PosunUp(souradnice.getX(), souradnice.getY());
+            return souradnice;
+        }
+        return souradnice;
+    }
+    
+    public static Souradnice KunPosunDownLeftLeft(int x, int y) {
+        Souradnice souradnice = new Souradnice(x, y);
+        if (x > 0 && y < 7) {
+            souradnice = PosunLeft(x, y);
+            souradnice = PosunLeft(souradnice.getX(), souradnice.getY());
+            souradnice = PosunDown(souradnice.getX(), souradnice.getY());
+        }
+        return souradnice;
+    }
 
     /**
      * Tato metoda ověřuje, že vypočítané souřadnice jsou stále v daném rozsahu
