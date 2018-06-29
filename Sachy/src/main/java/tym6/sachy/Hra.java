@@ -15,9 +15,9 @@ public class Hra {
 
     Hra() {
 
-        figurky.add(new Dama(Barva.CERNA, this, 4, 0));
+        figurky.add(new Dama(Barva.CERNA, this, 3, 0));
         figurky.add(new Dama(Barva.BILA, this, 3, 7));
-        figurky.add(new Kral(Barva.CERNA, this, 3, 0));
+        figurky.add(new Kral(Barva.CERNA, this, 4, 0));
         figurky.add(new Kral(Barva.BILA, this, 4, 7));
         figurky.add(new Vez(Barva.CERNA, this, 0, 0));
         figurky.add(new Vez(Barva.CERNA, this, 7, 0));
