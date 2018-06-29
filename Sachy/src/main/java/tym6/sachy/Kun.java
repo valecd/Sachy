@@ -29,6 +29,7 @@ public class Kun extends Figurka {
         Souradnice xy = new Souradnice(this.getSouradnice().getX(), this.getSouradnice().getY());
         if (true) {
            
+
             xy = Pohyb.KunPosunUpRight(xy.getX(), xy.getY());
             if (xy.getX() == -1 && xy.getY() == -1) {
 
@@ -78,6 +79,7 @@ public class Kun extends Figurka {
         if (true) {
             xy = Pohyb.KunPosunDownRightRight(xy.getX(), xy.getY());
             if (xy.getX() == -1 && xy.getY() == -1) {
+//                break;
             } else {
                 polePohybu[xy.getX()][xy.getY()] = 1;
             }

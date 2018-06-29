@@ -29,7 +29,7 @@ public class Strelec extends Figurka {
      * @return Vrací konkrétní figurku.
      */
     public Figurka getFigurku(Souradnice souradnice) {
-        for (Figurka fig : hra.figurky) {
+        for (Figurka fig : hra.getFigurky()) {
             if (fig.getSouradnice().getX() == super.getSouradnice().getX() && fig.getSouradnice().getY() == super.getSouradnice().getY()) {
                 return fig;
             }
@@ -52,6 +52,7 @@ public class Strelec extends Figurka {
         Souradnice xy = new Souradnice(this.getSouradnice().getX(), this.getSouradnice().getY());
 
         while (true) {
+            //System.out.println(xy.getX()+" "+xy.getY());
             xy = Pohyb.PosunUpLeft(xy.getX(), xy.getY());
             Figurka fg = getFigurku(xy);
             if (fg.getSouradnice().getX() == xy.getX() && fg.getSouradnice().getY() == xy.getY()) {

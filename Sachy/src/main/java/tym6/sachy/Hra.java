@@ -11,7 +11,7 @@ import java.util.ArrayList;
  */
 public class Hra {
 
-    protected List<Figurka> figurky = new ArrayList<>();
+    private List<Figurka> figurky = new ArrayList<>();
 
     Hra() {
 
@@ -32,13 +32,13 @@ public class Hra {
         figurky.add(new Kun(Barva.BILA, this, 1, 7));
         figurky.add(new Kun(Barva.BILA, this, 6, 7));
 
-        /*for (int i = 0; i < 8; i++) {
-            figurky.add(new Pesec(Barva.BILA, this));
+        for (int i = 0; i < 8; i++) {
+            figurky.add(new Pesec(Barva.BILA, this, i, 6));
         }
         for (int i = 0; i < 8; i++) {
-            figurky.add(new Pesec(Barva.CERNA, this));
+            figurky.add(new Pesec(Barva.CERNA, this, i, 1));
 
-        }*/
+        }
     }
 
     /**

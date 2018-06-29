@@ -40,7 +40,7 @@ public class Dama extends Figurka {
         }
     }*/
     public Figurka getFigurku(Souradnice souradnice) {
-        for (Figurka fig : hra.figurky) {
+        for (Figurka fig : hra.getFigurky()) {
             if (fig.getSouradnice().getX() == super.getSouradnice().getX() && fig.getSouradnice().getY() == super.getSouradnice().getY()) {
                 return fig;
             }
