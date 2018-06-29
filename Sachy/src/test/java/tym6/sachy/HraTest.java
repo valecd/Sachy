@@ -21,14 +21,14 @@ public class HraTest {
 
         Hra hra = new Hra();
         List<Figurka> figurky = new ArrayList<>();
-        figurky.add(new Dama(Barva.BILA));
+        figurky.add(new Dama(Barva.BILA, hra, 3, 7));
 
         Dama instance = (Dama) figurky.get(0);
         int expectedX = 3;
         int resultX = instance.getSouradnice().getX();
         int expectedY = 7;
         int resultY = instance.getSouradnice().getY();
-        
+
         assertEquals(expectedX, resultX);
         assertEquals(expectedY, resultY);
     }
