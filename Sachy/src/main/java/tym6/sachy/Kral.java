@@ -11,16 +11,14 @@ public class Kral extends Figurka {
     private int[][] polePohybu = new int[8][8];
     private char barva;
 
-    public Kral(Barva barva, Hra hra) {
-        super.hra = hra;
+    public Kral(Barva barva, Hra hra, int x, int y) {
+        super(barva, hra, x, y);
         super.barva = barva;
+        super.hra = hra;
+        super.x = x;
+        super.y = y;
         setJmeno("kral");
-        if (barva.equals(Barva.BILA)) {
-            setSouradnice(3, 7);
-
-        } else {
-            setSouradnice(4, 0);
-        }
+        setSouradnice(x, y);
     }
 
     public int[][] mozneTahy() {

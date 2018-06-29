@@ -15,20 +15,21 @@ public class Hra {
 
     Hra() {
 
-        figurky.add(new Dama(Barva.CERNA, this, 3, 0));
+        figurky.add(new Dama(Barva.CERNA, this, 4, 0));
         figurky.add(new Dama(Barva.CERNA, this, 3, 7));
+        figurky.add(new Kral(Barva.CERNA, this, 4, 0));
+        figurky.add(new Kral(Barva.BILA, this, 3, 7));
         /*figurky.add(new Strelec(Barva.CERNA, this));
         figurky.add(new Strelec(Barva.CERNA, this));
         figurky.add(new Strelec(Barva.BILA, this));
         figurky.add(new Strelec(Barva.BILA, this));
-        figurky.add(new Kral(Barva.CERNA, this));
-        figurky.add(new Kral(Barva.BILA, this));
+
         figurky.add(new Vez(Barva.CERNA, this));
         figurky.add(new Vez(Barva.CERNA, this));
         figurky.add(new Vez(Barva.BILA, this));
 
         figurky.add(new Vez(Barva.BILA, this));*/
-        /*for (int i = 0; i < 8; i++) {
+ /*for (int i = 0; i < 8; i++) {
             figurky.add(new Pesec(Barva.BILA, this));
         }
         for (int i = 0; i < 8; i++) {
