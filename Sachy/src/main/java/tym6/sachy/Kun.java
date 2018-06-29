@@ -11,16 +11,14 @@ public class Kun extends Figurka {
     private int[][] polePohybu = new int[8][8];
     private char barva;
 
-   public Kun(Barva barva, Hra hra) {
-        super.hra = hra;
+    public Kun(Barva barva, Hra hra, int x, int y) {
+        super(barva, hra, x, y);
         super.barva = barva;
+        super.hra = hra;
+        super.x = x;
+        super.y = y;
         setJmeno("kun");
-        if (barva.equals(Barva.BILA)) {
-            setSouradnice(1, 7);
-
-        } else {
-            setSouradnice(1, 0);
-        }
+        setSouradnice(x, y);
     }
     
     public int[][] mozneTahy() {
