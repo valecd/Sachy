@@ -138,7 +138,10 @@ public class Okno extends javax.swing.JFrame {
 
                     if (vybrano == true && (figur.getSouradnice().getX() * velikost + posunX != pole[0] || figur.getSouradnice().getY() * velikost + posunY != pole[1])) {
                         if (figur.mozneTahy()[j][i] == 1) {
-                            figur.setSouradnice(j, i);
+                            Souradnice sour = new Souradnice(j, i);
+                            if (hra.getFigurku(sour) != null) {
+                                hra.odeberFigurkuFigurkou(sour);
+                            }
                         }
                     } else {
                         for (Figurka fig : hra.getFigurky()) {
@@ -248,11 +251,12 @@ public class Okno extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
-    
+
     /**
      * Tato třída kontroluje vstupy hráče (kliknutí myší) a reaguje na ně
      */
     private class MysListener extends MouseAdapter {
+
         @Override
         public void mouseClicked(MouseEvent event) {
             int x = event.getX();
