@@ -27,10 +27,10 @@ public class Hra {
         figurky.add(new Vez(Barva.BILA, this));
         figurky.add(new Vez(Barva.BILA, this));
         for (int i = 0; i < 8; i++) {
-            figurky.add(new Pesec(Barva.BILA));
+            figurky.add(new Pesec(Barva.BILA, this));
         }
         for (int i = 0; i < 8; i++) {
-            figurky.add(new Pesec(Barva.CERNA));
+            figurky.add(new Pesec(Barva.CERNA, this));
 }
     }
 
