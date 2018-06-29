@@ -1,8 +1,8 @@
 package tym6.sachy;
 
 /**
- * Tato třída reprezentuje jednu konkrétní figurku pěšce na hracím poli. Třída
- * obsahuje metody týkající se konkrétního typu figurky.
+ * Tato třída reprezentuje jednu konkrétní figurku pěšce na hracím poli. 
+ * Třída obsahuje metody týkající se konkrétního typu figurky.
  *
  * @author Valecek, Maca, Beran, Pavlik
  */
