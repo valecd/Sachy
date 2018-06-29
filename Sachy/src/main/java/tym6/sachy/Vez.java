@@ -18,7 +18,7 @@ public class Vez extends Figurka {
             setSouradnice(3, 7);
 
         } else {
-            setSouradnice(3, 1);
+            setSouradnice(0, 0);
         }
     }
 
