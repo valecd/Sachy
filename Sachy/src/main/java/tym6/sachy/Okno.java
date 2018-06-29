@@ -138,10 +138,11 @@ public class Okno extends javax.swing.JFrame {
 
                     if (vybrano == true && (figur.getSouradnice().getX() * velikost + posunX != pole[0] || figur.getSouradnice().getY() * velikost + posunY != pole[1])) {
                         if (figur.mozneTahy()[j][i] == 1) {
-                            Souradnice sour = new Souradnice(j, i);
-                            if (hra.getFigurku(sour) != null) {
+                            Souradnice sour = new Souradnice(j,i);
+                            if(hra.getFigurku(sour)!=null){
                                 hra.odeberFigurkuFigurkou(sour);
                             }
+                            figur.setSouradnice(j, i);
                         }
                     } else {
                         for (Figurka fig : hra.getFigurky()) {
@@ -173,7 +174,7 @@ public class Okno extends javax.swing.JFrame {
         }
         vykresliFigurky();
         return pole;
-    }
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
