@@ -225,7 +225,7 @@ public class Pohyb {
     
     public static Souradnice KunPosunUpLeftLeft(int x, int y) {
         Souradnice souradnice = new Souradnice(x, y);
-        if (x > 0 && y > 1) {
+        if (x > 1 && y > 0) {
             souradnice = PosunLeft(x, y);
             souradnice = PosunLeft(souradnice.getX(), souradnice.getY());
             souradnice = PosunUp(souradnice.getX(), souradnice.getY());
