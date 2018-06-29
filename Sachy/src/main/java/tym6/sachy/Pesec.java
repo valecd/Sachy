@@ -11,27 +11,14 @@ public class Pesec extends Figurka {
     private int[][] polePohybu = new int[8][8];
     private Hra hra;
 
-    Pesec(Barva barva, Hra hra) {
-        this.hra = hra;
+    public Pesec(Barva barva, Hra hra, int x, int y) {
+        super(barva, hra, x, y);
         super.barva = barva;
-        setJmeno("Pesec");
-        if (barva.equals(Barva.BILA)) {
-            int souradniceX = 0;
-            for (int i = 0; i < hra.figurky.size(); i++) {
-                if (hra.figurky.get(i).getJmeno().equals("Pesec") && hra.figurky.get(i).getBarva() == Barva.BILA) {
-                    souradniceX++;
-                }
-            }
-            setSouradnice(souradniceX, 6);
-        } else {
-            int souradniceX = 0;
-            for (int i = 0; i < hra.figurky.size(); i++) {
-                if (hra.figurky.get(i).getJmeno().equals("Pesec") && hra.figurky.get(i).getBarva() == Barva.CERNA) {
-                    souradniceX++;
-                }
-            }
-            setSouradnice(souradniceX, 1);
-        }
+        super.hra = hra;
+        super.x = x;
+        super.y = y;
+        setJmeno("pesec");
+        setSouradnice(x, y);
     }
 
     public int[][] mozneTahy() {
