@@ -1,8 +1,8 @@
 package tym6.sachy;
 
 /**
- * Tato třída reprezentuje jednu konkrétní figurku pěšce na hracím poli. 
- * Třída obsahuje metody týkající se konkrétního typu figurky.
+ * Tato třída reprezentuje jednu konkrétní figurku pěšce na hracím poli. Třída
+ * obsahuje metody týkající se konkrétního typu figurky.
  *
  * @author Valecek, Maca, Beran, Pavlik
  */
@@ -17,8 +17,12 @@ public class Pesec extends Figurka {
         super.hra = hra;
         super.x = x;
         super.y = y;
-        setJmeno("pesec");
         setSouradnice(x, y);
+    }
+
+    @Override
+    public FigurkaTyp getFigurkaTyp() {
+        return FigurkaTyp.PESEC;
     }
 
     public int[][] mozneTahy() {
