@@ -15,28 +15,28 @@ import static org.junit.Assert.*;
 public class PohybTest {
     
     
-    public static int PosunUp1(int y) {
+    private static int PosunUp1(int y) {
         if (y > 0) {
             y--;
         }      
         return y;
     }
     
-    public static int PosunDown1(int y) {
+    private static int PosunDown1(int y) {
         if (y < 7) {
             y++;
         }
         return y;
     }
     
-     public static int PosunLeft1(int x) {
+     private static int PosunLeft1(int x) {
         if (x > 0) {
             x--;
         }
         return x;
     }
      
-      public static int PosunRight1(int x) {
+      private static int PosunRight1(int x) {
         if (x < 7) {
             x++;
         }
