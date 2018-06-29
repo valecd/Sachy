@@ -27,15 +27,18 @@ public class Hra {
         figurky.add(new Strelec(Barva.CERNA, this, 5, 0));
         figurky.add(new Strelec(Barva.BILA, this, 2, 7));
         figurky.add(new Strelec(Barva.BILA, this, 5, 7));
-        
- /*for (int i = 0; i < 8; i++) {
+        figurky.add(new Kun(Barva.CERNA, this, 1, 0));
+        figurky.add(new Kun(Barva.CERNA, this, 6, 0));
+        figurky.add(new Kun(Barva.BILA, this, 1, 7));
+        figurky.add(new Kun(Barva.BILA, this, 6, 7));
+
+        /*for (int i = 0; i < 8; i++) {
             figurky.add(new Pesec(Barva.BILA, this));
         }
         for (int i = 0; i < 8; i++) {
             figurky.add(new Pesec(Barva.CERNA, this));
 
         }*/
-
     }
 
     /**
