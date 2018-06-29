@@ -1,5 +1,8 @@
 package tym6.sachy;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * Tato abstraktní třída slouží jako šablona pro všechny figurky. Nachází se zde
  * metody, které mají všechny figurky stejné.
@@ -65,7 +68,8 @@ public abstract class Figurka {
      * @return Dvourozměrné pole, znázorňující políčka na která je možné se
      * posunout
      */
-    public int[][] mozneTahy() {
-        return polePohybu;
+    public Set<Souradnice>mozneTahy() {
+        Set<Souradnice> result = new HashSet<>();
+        return result;
     }
 }
