@@ -18,10 +18,10 @@ public class Dama extends Figurka {
         super.barva = barva;
         setJmeno("dama");
         if (barva.equals(Barva.BILA)) {
-            setSouradnice(3, 7);
+            setSouradnice(4, 7);
 
         } else {
-            setSouradnice(3, 1);
+            setSouradnice(3, 0);
         }
     }
     /**
