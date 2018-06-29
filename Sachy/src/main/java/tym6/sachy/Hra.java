@@ -14,6 +14,7 @@ public class Hra {
     protected List<Figurka> figurky = new ArrayList<>();
 
     Hra() {
+
         figurky.add(new Dama(Barva.CERNA, this, 3, 0));
         figurky.add(new Dama(Barva.CERNA, this, 3, 7));
         /*figurky.add(new Strelec(Barva.CERNA, this));
@@ -25,13 +26,16 @@ public class Hra {
         figurky.add(new Vez(Barva.CERNA, this));
         figurky.add(new Vez(Barva.CERNA, this));
         figurky.add(new Vez(Barva.BILA, this));
+
         figurky.add(new Vez(Barva.BILA, this));*/
         /*for (int i = 0; i < 8; i++) {
             figurky.add(new Pesec(Barva.BILA, this));
         }
         for (int i = 0; i < 8; i++) {
             figurky.add(new Pesec(Barva.CERNA, this));
+
         }*/
+
     }
 
     /**
