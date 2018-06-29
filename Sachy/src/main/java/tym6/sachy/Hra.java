@@ -31,14 +31,15 @@ public class Hra {
         figurky.add(new Kun(Barva.CERNA, this, 6, 0));
         figurky.add(new Kun(Barva.BILA, this, 1, 7));
         figurky.add(new Kun(Barva.BILA, this, 6, 7));
-
-        /*for (int i = 0; i < 8; i++) {
-            figurky.add(new Pesec(Barva.BILA, this));
+        
+        //Umisteni pesce
+        for (int i = 0; i < 8; i++) {
+            figurky.add(new Pesec(Barva.BILA, this, i, 6));
         }
         for (int i = 0; i < 8; i++) {
-            figurky.add(new Pesec(Barva.CERNA, this));
+            figurky.add(new Pesec(Barva.CERNA, this, i, 1));
 
-        }*/
+        }
     }
 
     /**
