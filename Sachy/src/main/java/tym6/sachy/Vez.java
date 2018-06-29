@@ -53,7 +53,6 @@ public class Vez extends Figurka {
         Souradnice xy = new Souradnice(this.getSouradnice().getX(), this.getSouradnice().getY());
 
         while (true) {
-            //System.out.println(xy.getX()+" "+xy.getY());
             xy = Pohyb.PosunUp(xy.getX(), xy.getY());
             Figurka fg = getFigurku(xy);
             if (fg.getSouradnice().getX() == xy.getX() && fg.getSouradnice().getY() == xy.getY()) {
