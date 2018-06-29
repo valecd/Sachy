@@ -18,7 +18,7 @@ public class Strelec extends Figurka {
             setSouradnice(4, 7);
 
         } else {
-            setSouradnice(4, 1);
+            setSouradnice(5, 0);
         }
     }
 
