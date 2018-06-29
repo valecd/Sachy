@@ -31,15 +31,14 @@ public class Hra {
         figurky.add(new Kun(Barva.CERNA, this, 6, 0));
         figurky.add(new Kun(Barva.BILA, this, 1, 7));
         figurky.add(new Kun(Barva.BILA, this, 6, 7));
-        
-        //Umisteni pesce
-        for (int i = 0; i < 8; i++) {
-            figurky.add(new Pesec(Barva.BILA, this, i, 6));
-        }
-        for (int i = 0; i < 8; i++) {
-            figurky.add(new Pesec(Barva.CERNA, this, i, 1));
 
+        /*for (int i = 0; i < 8; i++) {
+            figurky.add(new Pesec(Barva.BILA, this));
         }
+        for (int i = 0; i < 8; i++) {
+            figurky.add(new Pesec(Barva.CERNA, this));
+
+        }*/
     }
 
     /**
@@ -64,30 +63,8 @@ public class Hra {
         }
     }
 
-    /**
-     * Metoda pro určení zda se na daném políčku nachází figurka a jaké je
-     * barvy.
-     *
-     * @param x Součadnice osy X.
-     * @param y Souřadnice osy Y.
-     * @return vrací hodnotu 0,1,2 podle toho co se na poli nachází 0 = nic 1 =
-     * cerna 2 = bila
-     */
-    public int coJeNaPozici(int x, int y) {
-        int hodnota = 0;
-        for (Figurka fig : figurky) {
-            if (fig.getSouradnice().getX() == x && fig.getSouradnice().getY() == y) {
-                if (fig.getBarva() == Barva.CERNA) {
-                    hodnota = 1;
-                } else {
-                    hodnota = 2;
-                }
-            }
-        }
-        return hodnota;
-    }
 
-    public Figurka getFigurku(Souradnice souradnice) {
+    public Figurka getFigurka(Souradnice souradnice) {
         for (Figurka fig : this.figurky) {
             if (fig.getSouradnice().getX() == souradnice.getX() && fig.getSouradnice().getY() == souradnice.getY()) {
                 return fig;
