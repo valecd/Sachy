@@ -19,7 +19,7 @@ public class Kral extends Figurka {
             setSouradnice(3, 7);
 
         } else {
-            setSouradnice(3, 1);
+            setSouradnice(4, 0);
         }
     }
 
