@@ -137,7 +137,7 @@ public class Okno extends javax.swing.JFrame {
                     boolean klinutiNaFigurku = false;
 
                     if (vybrano == true && (figur.getSouradnice().getX() * velikost + posunX != pole[0] || figur.getSouradnice().getY() * velikost + posunY != pole[1])) {
-                        if (figur.mozneTahy()[j][i] == 1) {
+                        if (figur.vypocitejMozneTahy()[j][i] == 1) {
                             Souradnice sour = new Souradnice(j,i);
                             if(hra.getFigurka(sour)!=null){
                                 hra.odeberFigurkuFigurkou(sour);
@@ -151,9 +151,9 @@ public class Okno extends javax.swing.JFrame {
                                 vybrano = true;
                                 figur = fig;
                                 jPanel1.getGraphics().drawImage(bfi, pole[0], pole[1], null);
-                                for (int k = 0; k < fig.mozneTahy().length; k++) {
-                                    for (int p = 0; p < fig.mozneTahy().length; p++) {
-                                        if (fig.mozneTahy()[p][k] == 1) {
+                                for (int k = 0; k < fig.vypocitejMozneTahy().length; k++) {
+                                    for (int p = 0; p < fig.vypocitejMozneTahy().length; p++) {
+                                        if (fig.vypocitejMozneTahy()[p][k] == 1) {
                                             jPanel1.getGraphics().drawImage(bfi, p * velikost + posunX, k * velikost + posunY, null);
                                         }
                                     }
