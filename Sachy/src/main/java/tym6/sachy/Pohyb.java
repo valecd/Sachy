@@ -201,7 +201,7 @@ public class Pohyb {
     
      public static Souradnice KunPosunUpRightRight(int x, int y) {
         Souradnice souradnice = new Souradnice(x, y);
-        if (x < 7 && y > 1) {
+        if (x < 6 && y > 0) {
             souradnice = PosunRight(x, y);
             souradnice = PosunRight(souradnice.getX(), souradnice.getY());
             souradnice = PosunUp(souradnice.getX(), souradnice.getY());
@@ -213,7 +213,7 @@ public class Pohyb {
     
     public static Souradnice KunPosunDownRightRight(int x, int y) {
         Souradnice souradnice = new Souradnice(x, y);
-        if (x < 7 && y > 1) {
+        if (x < 6 && y > 6) {
             souradnice = PosunRight(x, y);
             souradnice = PosunRight(souradnice.getX(), souradnice.getY());
             souradnice = PosunDown(souradnice.getX(), souradnice.getY());
