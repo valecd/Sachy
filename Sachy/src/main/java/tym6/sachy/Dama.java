@@ -19,30 +19,15 @@ public class Dama extends Figurka {
         super.hra = hra;
         super.x = x;
         super.y = y;
-        setJmeno("Dama");
         setSouradnice(x, y);
     }
 
+    @Override
+    public FigurkaTyp getFigurkaTyp() {
+        return FigurkaTyp.DAMA;
+    }
 
-    /*    public Dama(Barva barva, Hra ha, int x, int y) {
-    super.barva = barva;
-    super.hra = hra;
-    super.x = x;
-    super.y = y;
-    setSouradnice(x,y);
-    }*/
-
- /*Dama(Barva barva, Hra hra) {
-        super.hra = hra;
-        super.barva = barva;
-        setJmeno("dama");
-        if (barva.equals(Barva.BILA)) {
-            setSouradnice(4, 7);
-
-        } else {
-            setSouradnice(3, 0);
-        }
-    }*/
+        
     /**
      * Metoda pro vybrání konkrétní figurky ze seznamu figurek.
      *
@@ -85,6 +70,7 @@ public class Dama extends Figurka {
                     polePohybu[xy.getX()][xy.getY()] = 1;
                     break;
                 }
+                break;
             }
             if (xy.getX() == -1 && xy.getY() == -1 || fg == null) {
                 break;
@@ -169,10 +155,11 @@ public class Dama extends Figurka {
             xy = Pohyb.PosunDown(xy.getX(), xy.getY());
             Figurka fg = getFigurku(xy);
             if (fg.getSouradnice().getX() == xy.getX() && fg.getSouradnice().getY() == xy.getY()) {
-                if (fg.getBarva() != super.getBarva()) {
+                if (fg.getBarva().equals(Barva.CERNA) && super.getBarva().equals(Barva.BILA)||fg.getBarva().equals(Barva.BILA) && super.getBarva().equals(Barva.CERNA)) {
                     polePohybu[xy.getX()][xy.getY()] = 1;
                     break;
                 }
+                break;
             }
             if (xy.getX() == -1 && xy.getY() == -1) {
                 break;
@@ -203,7 +190,7 @@ public class Dama extends Figurka {
             xy = Pohyb.PosunLeft(xy.getX(), xy.getY());
             Figurka fg = getFigurku(xy);
             if (fg.getSouradnice().getX() == xy.getX() && fg.getSouradnice().getY() == xy.getY()) {
-                if (fg.getBarva() != super.getBarva()) {
+                if (fg.getBarva() != this.getBarva()) {
                     polePohybu[xy.getX()][xy.getY()] = 1;
                     break;
                 }

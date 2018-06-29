@@ -139,7 +139,7 @@ public class Okno extends javax.swing.JFrame {
                     if (vybrano == true && (figur.getSouradnice().getX() * velikost + posunX != pole[0] || figur.getSouradnice().getY() * velikost + posunY != pole[1])) {
                         if (figur.mozneTahy()[j][i] == 1) {
                             Souradnice sour = new Souradnice(j,i);
-                            if(hra.getFigurku(sour)!=null){
+                            if(hra.getFigurka(sour)!=null){
                                 hra.odeberFigurkuFigurkou(sour);
                             }
                             figur.setSouradnice(j, i);

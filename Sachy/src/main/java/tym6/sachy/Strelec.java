@@ -16,10 +16,12 @@ public class Strelec extends Figurka {
         super.hra = hra;
         super.x = x;
         super.y = y;
-        setJmeno("strelec");
         setSouradnice(x, y);
     }
-
+    @Override
+    public FigurkaTyp getFigurkaTyp() {
+        return FigurkaTyp.STRELEC;
+    }
     /**
      * Metoda pro vybrání konkrétní figurky ze seznamu figurek.
      *

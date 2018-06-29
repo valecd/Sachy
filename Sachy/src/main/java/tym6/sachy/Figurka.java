@@ -10,11 +10,11 @@ public abstract class Figurka {
 
     private int[][] polePohybu = new int[8][8];
     private Souradnice souradnice = new Souradnice(0, 0);
-    private String jmeno;
     protected Barva barva = Barva.BILA;
     protected int x;
     protected int y;
     protected Hra hra;
+    
 
     public Figurka(Barva barva, Hra hra, int x, int y) {
         this.barva = barva;
@@ -28,18 +28,7 @@ public abstract class Figurka {
      *
      * @return Název figurky.
      */
-    public String getJmeno() {
-        return this.jmeno;
-    }
-
-    /**
-     * Tato metoda umožňuje nastavit Název figurky.
-     *
-     * @param jmeno Název figurky.
-     */
-    protected void setJmeno(String jmeno) {
-        this.jmeno = jmeno;
-    }
+    public abstract FigurkaTyp getFigurkaTyp();
 
     /**
      * Metoda umožňující nastavit souřadnice na hracím poli pro figurky.

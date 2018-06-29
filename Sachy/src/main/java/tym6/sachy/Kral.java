@@ -17,8 +17,12 @@ public class Kral extends Figurka {
         super.hra = hra;
         super.x = x;
         super.y = y;
-        setJmeno("kral");
         setSouradnice(x, y);
+    }
+    
+    @Override
+    public FigurkaTyp getFigurkaTyp() {
+        return FigurkaTyp.KRAL;
     }
 
     public int[][] mozneTahy() {

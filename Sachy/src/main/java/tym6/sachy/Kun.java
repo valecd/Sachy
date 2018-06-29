@@ -17,8 +17,11 @@ public class Kun extends Figurka {
         super.hra = hra;
         super.x = x;
         super.y = y;
-        setJmeno("kun");
         setSouradnice(x, y);
+    }
+    @Override
+    public FigurkaTyp getFigurkaTyp() {
+        return FigurkaTyp.KUN;
     }
     
     public int[][] mozneTahy() {

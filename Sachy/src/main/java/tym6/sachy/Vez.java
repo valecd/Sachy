@@ -16,8 +16,12 @@ public class Vez extends Figurka {
         super.hra = hra;
         super.x = x;
         super.y = y;
-        setJmeno("vez");
         setSouradnice(x, y);
+    }
+    
+    @Override
+    public FigurkaTyp getFigurkaTyp() {
+        return FigurkaTyp.VEZ;
     }
 
     /**
