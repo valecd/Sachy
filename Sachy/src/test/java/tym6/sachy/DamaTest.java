@@ -18,17 +18,17 @@ public class DamaTest {
     public void testMozneTahy() {
 
         Hra hra = new Hra();
-        Dama instance = new Dama(Barva.BILA, hra, 5,5);
+        
         int[][] expResult = {
-            {1, 0, 0, 0, 0, 1, 0, 0},
-            {0, 1, 0, 0, 0, 1, 0, 0},
-            {0, 0, 1, 0, 0, 1, 0, 0},
-            {0, 0, 0, 1, 0, 1, 0, 1},
-            {0, 0, 0, 0, 1, 1, 1, 0},
-            {1, 1, 1, 1, 1, 0, 1, 1},
-            {0, 0, 0, 0, 1, 1, 1, 0},
-            {0, 0, 0, 1, 0, 1, 0, 1}};
-        int[][] result = instance.mozneTahy();
+            {0, 1, 1, 1, 1, 1, 1, 1},
+            {1, 0, 0, 0, 0, 0, 0, 0},
+            {1, 0, 0, 0, 0, 0, 0, 0},
+            {1, 0, 0, 0, 0, 0, 0, 0},
+            {1, 0, 0, 0, 0, 0, 0, 0},
+            {1, 0, 0, 0, 0, 0, 0, 0},
+            {1, 0, 0, 0, 0, 0, 0, 0},
+            {1, 0, 0, 0, 0, 0, 0, 0}};
+        int[][] result = hra.getFigurka(new Souradnice (0,0)).vypocitejMozneTahy();
         assertArrayEquals(expResult, result);
     }
 
