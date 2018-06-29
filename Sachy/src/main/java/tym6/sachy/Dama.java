@@ -13,7 +13,7 @@ public class Dama extends Figurka {
 
     private int[][] polePohybu = new int[8][8];
 
-    public Dama(Barva barva, Hra hra, int x, int y) {
+    protected Dama(Barva barva, Hra hra, int x, int y) {
         super(barva, hra, x, y);
         super.barva = barva;
         super.hra = hra;
@@ -57,7 +57,9 @@ public class Dama extends Figurka {
      * @return Vrací dvourozměrné pole, kde jsou vyznačena dostupná políčka pro
      * pohyb.
      */
-    public int[][] mozneTahy() {
+    
+    @Override
+    protected int[][] vypocitejMozneTahy() {
         polePohybu = new int[8][8];
         Souradnice xy = new Souradnice(this.getSouradnice().getX(), this.getSouradnice().getY());
 

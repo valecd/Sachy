@@ -24,7 +24,8 @@ public class Kun extends Figurka {
         return FigurkaTyp.KUN;
     }
     
-    public int[][] mozneTahy() {
+    @Override
+    protected int[][] vypocitejMozneTahy() {
         polePohybu = new int[8][8];
         Souradnice xy = new Souradnice(this.getSouradnice().getX(), this.getSouradnice().getY());
         if (true) {
