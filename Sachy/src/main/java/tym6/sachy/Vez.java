@@ -15,7 +15,7 @@ public class Vez extends Figurka {
         super.barva = barva;
         setJmeno("vez");
         if (barva.equals(Barva.BILA)) {
-            setSouradnice(3, 7);
+            setSouradnice(0, 7);
 
         } else {
             setSouradnice(0, 0);
