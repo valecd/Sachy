@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author Libor
+ * @author Valecek, Maca, Beran, Pavlik
  */
 public class DamaTest {
 
