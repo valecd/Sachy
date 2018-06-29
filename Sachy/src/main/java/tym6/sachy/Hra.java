@@ -23,13 +23,11 @@ public class Hra {
         figurky.add(new Vez(Barva.CERNA, this, 7, 0));
         figurky.add(new Vez(Barva.BILA, this, 0, 7));
         figurky.add(new Vez(Barva.BILA, this, 7, 7));
+        figurky.add(new Strelec(Barva.CERNA, this, 2, 0));
+        figurky.add(new Strelec(Barva.CERNA, this, 5, 0));
+        figurky.add(new Strelec(Barva.BILA, this, 2, 7));
+        figurky.add(new Strelec(Barva.BILA, this, 5, 7));
         
-        /*figurky.add(new Strelec(Barva.CERNA, this));
-        figurky.add(new Strelec(Barva.CERNA, this));
-        figurky.add(new Strelec(Barva.BILA, this));
-        figurky.add(new Strelec(Barva.BILA, this));
-
-         */
  /*for (int i = 0; i < 8; i++) {
             figurky.add(new Pesec(Barva.BILA, this));
         }

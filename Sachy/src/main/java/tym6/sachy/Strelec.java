@@ -10,16 +10,14 @@ public class Strelec extends Figurka {
 
     private int[][] polePohybu = new int[8][8];
 
-    Strelec(Barva barva, Hra hra) {
-        super.hra = hra;
+    public Strelec(Barva barva, Hra hra, int x, int y) {
+        super(barva, hra, x, y);
         super.barva = barva;
+        super.hra = hra;
+        super.x = x;
+        super.y = y;
         setJmeno("strelec");
-        if (barva.equals(Barva.BILA)) {
-            setSouradnice(2, 7);
-
-        } else {
-            setSouradnice(5, 0);
-        }
+        setSouradnice(x, y);
     }
 
     /**
