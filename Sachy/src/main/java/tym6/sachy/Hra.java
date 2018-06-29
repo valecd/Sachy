@@ -7,16 +7,17 @@ import java.util.ArrayList;
  * Třída pro vytváření jednotlivých instancí různých her. V této třídě jsou
  * metody obstarávající chod hry.
  *
- * @author Valecek, Maca, Beran, Pavlik
+ * @author Valeczek, Maca, Beran, Pavlik
  */
 public class Hra {
 
     protected List<Figurka> figurky = new ArrayList<>();
 
     Hra() {
-        figurky.add(new Dama(Barva.CERNA, this));
-        figurky.add(new Dama(Barva.BILA, this));
-        figurky.add(new Strelec(Barva.CERNA, this));
+
+        figurky.add(new Dama(Barva.CERNA, this, 3, 0));
+        figurky.add(new Dama(Barva.CERNA, this, 3, 7));
+        /*figurky.add(new Strelec(Barva.CERNA, this));
         figurky.add(new Strelec(Barva.CERNA, this));
         figurky.add(new Strelec(Barva.BILA, this));
         figurky.add(new Strelec(Barva.BILA, this));
@@ -25,15 +26,16 @@ public class Hra {
         figurky.add(new Vez(Barva.CERNA, this));
         figurky.add(new Vez(Barva.CERNA, this));
         figurky.add(new Vez(Barva.BILA, this));
-        figurky.add(new Vez(Barva.BILA, this));
-        figurky.add(new Kun(Barva.CERNA, this));
-        figurky.add(new Kun(Barva.BILA, this));
-        for (int i = 0; i < 8; i++) {
+
+        figurky.add(new Vez(Barva.BILA, this));*/
+        /*for (int i = 0; i < 8; i++) {
             figurky.add(new Pesec(Barva.BILA, this));
         }
         for (int i = 0; i < 8; i++) {
             figurky.add(new Pesec(Barva.CERNA, this));
-        }
+
+        }*/
+
     }
 
     /**
