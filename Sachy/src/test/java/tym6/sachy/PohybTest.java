@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tym6.sachy.test;
+package tym6.sachy;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
