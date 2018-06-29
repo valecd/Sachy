@@ -4,17 +4,24 @@ package tym6.sachy;
  * Tato třída reprezentuje jednu konkrétní figurku koně na hracím poli.
  * Třída obsahuje metody týkající se konkrétního typu figurky.
  * 
- * @author Valeczek, Maca, Beran, Pavlik
+ * @author Valecek, Maca, Beran, Pavlik
  */
 public class Kun extends Figurka {
     
     private int[][] polePohybu = new int[8][8];
     private char barva;
 
-    /**
-     *
-     * @param barva
-     */
+   public Kun(Barva barva, Hra hra) {
+        super.hra = hra;
+        super.barva = barva;
+        setJmeno("kun");
+        if (barva.equals(Barva.BILA)) {
+            setSouradnice(1, 7);
+
+        } else {
+            setSouradnice(1, 0);
+        }
+    }
     
     public int[][] mozneTahy() {
         polePohybu = new int[8][8];
