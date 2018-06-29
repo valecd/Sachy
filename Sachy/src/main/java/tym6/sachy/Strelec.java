@@ -15,7 +15,7 @@ public class Strelec extends Figurka {
         super.barva = barva;
         setJmeno("strelec");
         if (barva.equals(Barva.BILA)) {
-            setSouradnice(4, 7);
+            setSouradnice(2, 7);
 
         } else {
             setSouradnice(5, 0);
