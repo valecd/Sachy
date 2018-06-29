@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * Třída pro vytváření jednotlivých instancí různých her. V této třídě jsou
  * metody obstarávající chod hry.
  *
- * @author Valeczek, Maca, Beran, Pavlik
+ * @author Valecek, Maca, Beran, Pavlik
  */
 public class Hra {
 
